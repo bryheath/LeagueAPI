@@ -22,6 +22,6 @@ internal class ProfileIconData: Decodable {
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try ProfileIconId(container.decode(Long.self, forKey: .id))
+        self.id = try ProfileIconId(container.decode(Int64.self, forKey: .id))
     }
 }
