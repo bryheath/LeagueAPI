@@ -12,7 +12,7 @@ internal class MatchMethod: LeagueMethod {
     
     public enum MatchMethods: CustomStringConvertible {
         case ById(id: GameId)
-        case MatchesByAccountId(id: AccountId, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?, season: Season?)
+        case MatchesByAccountId(id: SummonerPuuid, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?, season: Season?)
         case TimelineById(id: GameId)
         case MatchIdsByTournamentCode(code: TournamentCode)
         case ByIdAndTournamentCode(id: GameId, code: TournamentCode)
@@ -54,7 +54,7 @@ internal class MatchMethod: LeagueMethod {
     
     func getMethodUrl() -> String {
         let entrypoint: String = self.service.hostUrl
-        let commonPath: String = "https://\(entrypoint)\(MethodPaths.Match.rawValue)/\(Version.LOL_API)"
+        let commonPath: String = "https://\(entrypoint)\(MethodPaths.Match.rawValue)/\("v5")"
         switch self.method {
         case .ById(let id):
             return "\(commonPath)/matches/\(id)"
@@ -71,7 +71,7 @@ internal class MatchMethod: LeagueMethod {
             for parameter in queryParameters {
                 queryParametersUrl += "\(queryParametersUrl == "" ? "" : "&")\(parameter.key)=\(parameter.value)"
             }
-            return "\(commonPath)/matchlists/by-account/\(id)\(queryParametersUrl)"
+            return "\(commonPath)/matchs/by-puuid/\(id)\("ids")"
         case .TimelineById(let id):
             return "\(commonPath)/timelines/by-match/\(id)"
         case .MatchIdsByTournamentCode(let code):
