@@ -10,10 +10,10 @@ import Foundation
 
 public class MatchList: Decodable {
     
-    public var matches: [String]
+    public var matches: String
     
     public required init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        self.matches = try container.decode([String].self)
+        self.matches = try container.decode(String.self)
     }
 }
