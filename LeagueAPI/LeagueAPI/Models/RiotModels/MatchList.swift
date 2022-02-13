@@ -10,12 +10,12 @@ import Foundation
 
 public class MatchList: Decodable {
     
-    public var matches = [String]()
+    public var matches = [MatchId]()
     
     public required init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         while !container.isAtEnd {
-            let entry = try container.decode(String.self)
+            let entry = try MatchId(container.decode(String.self))
             matches.append(entry)
         }
     }

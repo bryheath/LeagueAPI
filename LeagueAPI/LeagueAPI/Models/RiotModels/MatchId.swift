@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+public class MatchId: Identifier<String> {}
