@@ -18,6 +18,5 @@ public class MatchList: Decodable {
             let entry = try container.decode(String.self)
             matches.append(entry)
         }
-        self.matches = try container.decode([String].self)
     }
 }
