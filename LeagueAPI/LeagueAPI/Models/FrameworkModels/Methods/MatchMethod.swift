@@ -71,7 +71,7 @@ internal class MatchMethod: LeagueMethod {
             for parameter in queryParameters {
                 queryParametersUrl += "\(queryParametersUrl == "" ? "" : "&")\(parameter.key)=\(parameter.value)"
             }
-            return "\(commonPath)/matchs/by-puuid/\(id)\("ids")"
+            return "\(commonPath)/matchs/by-puuid/\(id)\("/ids")"
         case .TimelineById(let id):
             return "\(commonPath)/timelines/by-match/\(id)"
         case .MatchIdsByTournamentCode(let code):
