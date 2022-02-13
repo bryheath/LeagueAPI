@@ -11,7 +11,7 @@ import Foundation
 internal class MatchMethod: LeagueMethod {
     
     public enum MatchMethods: CustomStringConvertible {
-        case ById(id: GameId)
+        case ById(id: MatchId)
         case MatchesByAccountId(id: SummonerPuuid, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?, season: Season?)
         case TimelineById(id: GameId)
         case MatchIdsByTournamentCode(code: TournamentCode)
