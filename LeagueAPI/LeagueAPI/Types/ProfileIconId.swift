@@ -8,4 +8,4 @@
 
 import Foundation
 
-public class ProfileIconId: Identifier<Int64> {}
+public class ProfileIconId: Identifier<Long> {}
