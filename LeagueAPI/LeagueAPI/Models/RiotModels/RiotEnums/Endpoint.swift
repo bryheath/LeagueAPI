@@ -11,7 +11,7 @@ import Foundation
 internal enum Endpoint: String {
     case BR = "br1.api.riotgames.com"
     case EUNE = "eun1.api.riotgames.com"
-    case EUW = "euw1.api.riotgames.com"
+    case EUW = "europe.api.riotgames.com"
     case JP = "jp1.api.riotgames.com"
     case KR = "kr.api.riotgames.com"
     case LAN = "la1.api.riotgames.com"
