@@ -10,7 +10,7 @@ import Foundation
 
 internal class ProfileIconData: Decodable {
     
-    public var id: ProfileIconId
+    public var id: ProfileIconId = ProfileIconId(0)
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -22,6 +22,10 @@ internal class ProfileIconData: Decodable {
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try ProfileIconId(container.decode(Long.self, forKey: .id))
+        do {
+            self.id = try ProfileIconId(container.decode(Long.self, forKey: .id))
+        } catch {
+            print("ERRROOOOOOORRR")
+        }
     }
 }
