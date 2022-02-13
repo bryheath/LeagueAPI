@@ -53,7 +53,7 @@ internal class MatchMethod: LeagueMethod {
     }
     
     func getMethodUrl() -> String {
-        let entrypoint: String = self.service.hostUrl
+        let entrypoint: String = "europe.api.riotgames.com"
         let commonPath: String = "https://\(entrypoint)\(MethodPaths.Match.rawValue)/\("v5")"
         switch self.method {
         case .ById(let id):
