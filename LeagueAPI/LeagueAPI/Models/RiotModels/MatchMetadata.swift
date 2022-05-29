@@ -1,14 +1,14 @@
 //
-//  Metadata.swift
+//  MatchMetadata.swift
 //  LeagueAPI
 //
-//  Created by Bryan Heath on 5/18/22.
+//  Created by Antoine Clop on 1/15/21
 //  Copyright © 2022 Antoine Clop. All rights reserved.
 //
 
 import Foundation
 
-public class Metadata: Decodable {
+public class MatchMetadata: Decodable {
     
     public var dataVersion: String
     public var matchId: String
