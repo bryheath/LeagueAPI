@@ -1,8 +1,9 @@
 //
 //  PerkStyle.swift
-//  
+//  LeagueAPI
 //
 //  Created by Bryan Heath on 5/29/22.
+//  Copyright © 2022 Antoine Clop. All rights reserved.
 //
 
 import Foundation
