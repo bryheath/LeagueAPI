@@ -1,5 +1,5 @@
 //
-//  Metadata.swift
+//  Team.swift
 //  LeagueAPI
 //
 //  Created by Bryan Heath on 5/18/22.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Metadata: Decodable {
+public class Team: Decodable {
     
     public var dataVersion: String
     public var matchId: String

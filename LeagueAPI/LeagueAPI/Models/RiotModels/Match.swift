@@ -10,7 +10,7 @@ import Foundation
 
 public class Match: Decodable {
     
-    public var season: Season
+    //public var season: Season
     public var queueMode: QueueMode
     public var gameId: GameId
     public var participants: [MatchParticipantIdentity]
@@ -25,7 +25,7 @@ public class Match: Decodable {
     public var gameCreation: Datetime
     
     enum CodingKeys: String, CodingKey {
-        case seasonId = "seasonId"
+        //case seasonId = "seasonId"
         case queueId = "queueId"
         case gameId = "gameId"
         case participants = "participantIdentities"
@@ -39,9 +39,9 @@ public class Match: Decodable {
         case gameDuration = "gameDuration"
         case gameCreation = "gameCreation"
     }
-    
-    public init(season: Season, queueMode: QueueMode, gameId: GameId, participants: [MatchParticipantIdentity], patch: String, platformId: String, gameMode: GameMode, map: Map, gameType: GameType, teamsInfo: [TeamStats], participantsInfo: [MatchParticipant], gameDuration: Duration, gameCreation: Datetime) {
-        self.season = season
+    public init(queueMode: QueueMode, gameId: GameId, participants: [MatchParticipantIdentity], patch: String, platformId: String, gameMode: GameMode, map: Map, gameType: GameType, teamsInfo: [TeamStats], participantsInfo: [MatchParticipant], gameDuration: Duration, gameCreation: Datetime) {
+//    public init(season: Season, queueMode: QueueMode, gameId: GameId, participants: [MatchParticipantIdentity], patch: String, platformId: String, gameMode: GameMode, map: Map, gameType: GameType, teamsInfo: [TeamStats], participantsInfo: [MatchParticipant], gameDuration: Duration, gameCreation: Datetime) {
+        //self.season = season
         self.queueMode = queueMode
         self.gameId = gameId
         self.participants = participants
@@ -58,7 +58,7 @@ public class Match: Decodable {
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.season = try Season(container.decode(Int.self, forKey: .seasonId))
+        //self.season = try Season(container.decode(Int.self, forKey: .seasonId))
         self.queueMode = try QueueMode(container.decode(Long.self, forKey: .queueId))
         self.gameId = try GameId(container.decode(Long.self, forKey: .gameId))
         self.participants = try container.decode([MatchParticipantIdentity].self, forKey: .participants)

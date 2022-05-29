@@ -19,7 +19,7 @@ public class ProfileIcon {
     }
     
     internal init(data: ProfileIconData, version: String) {
-        self.id = data.id ?? ProfileIconId(0)
+        self.id = data.id
         self.profileIcon = ImageWithUrl(url: "\(ServicesUrl.DDragonCdn)/\(version)/img/profileicon/\(data.id).png", image: nil)
     }
 }
