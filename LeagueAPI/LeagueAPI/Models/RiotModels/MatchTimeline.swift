@@ -8,25 +8,24 @@
 
 import Foundation
 
-public class MatchTimeline: Decodable {
+public class MatchTimeline: Decodable { // Match v5
     
-    public var frameInterval: Duration
-    public var frames: [MatchFrame]
+    public var metadata: LOLMatchMetadata
+    public var info: MatchTimelineInfo
     
     enum CodingKeys: String, CodingKey {
-        case frameInterval = "frameInterval"
-        case frames = "frames"
+        case metadata = "metadata"
+        case info = "info"
     }
     
-    public init(frameInterval: Duration, frames: [MatchFrame]) {
-        self.frameInterval = frameInterval
-        self.frames = frames
+    public init(metadata: LOLMatchMetadata, info: MatchTimelineInfo) {
+        self.metadata = metadata
+        self.info = info
     }
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let durationSec: Long = try container.decode(Long.self, forKey: .frameInterval)
-        self.frameInterval = Duration(seconds: Double(durationSec))
-        self.frames = try container.decode([MatchFrame].self, forKey: .frames)
+        self.metadata = try container.decode(LOLMatchMetadata.self, forKey: .metadata)
+        self.info = try container.decode(MatchTimelineInfo.self, forKey: .info)
     }
 }

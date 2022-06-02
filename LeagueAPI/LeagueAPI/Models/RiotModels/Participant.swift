@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Participant: Decodable {
+public class Participant: Decodable { // Used by Spectator v4 - CurrentGameParticipant
     
     public var summonerName: String
     public var profileIconId: ProfileIconId

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class RunePage: Decodable {
+public class RunePage: Decodable { // Spectator v4 - 'perks'
     
     public var primaryPath: RunePathId
     public var secondaryPath: RunePathId

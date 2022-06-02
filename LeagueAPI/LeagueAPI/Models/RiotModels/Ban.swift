@@ -1,5 +1,5 @@
 //
-//  TeamBan.swift
+//  Ban.swift
 //  LeagueAPI
 //
 //  Created by Antoine Clop on 7/28/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TeamBan: Decodable {
+public class Ban: Decodable {
     
     public var banTurn: Int
     public var championId: ChampionId

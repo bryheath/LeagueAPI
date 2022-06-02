@@ -10,27 +10,30 @@ import Foundation
 
 public class Team: Decodable {
     
-    public var dataVersion: String
-    public var matchId: String
-    public var participants: [String]
+    public var bans: [Ban]
+    public var objectives: MatchObjectives
+    public var teamId: Int
+    public var win: Bool
     
     enum CodingKeys: String, CodingKey {
-        //case seasonId = "seasonId"
-        case dataVersion = "dataVersion"
-        case matchId = "matchId"
-        case participants = "participants"
+        case bans = "bans"
+        case objectives = "objectives"
+        case teamId = "teamId"
+        case win = "win"
     }
-    public init(dataVersion: String, matchId: String, participants: [String]) {
-        self.dataVersion = dataVersion
-        self.matchId = matchId
-        self.participants = participants
+    public init(bans: [Ban], objectives: MatchObjectives, teamId: Int, win: Bool) {
+        self.bans = bans
+        self.objectives = objectives
+        self.teamId = teamId
+        self.win = win
     }
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.dataVersion = try container.decode(String.self, forKey: .dataVersion)
-        self.matchId = try container.decode(String.self, forKey: .matchId)
-        self.participants = try container.decode([String].self, forKey: .participants)
+        self.bans = try container.decode([Ban].self, forKey: .bans)
+        self.objectives = try container.decode(MatchObjectives.self, forKey: .objectives)
+        self.teamId = try container.decode(Int.self, forKey: .teamId)
+        self.win = try container.decode(Bool.self, forKey: .win)
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MatchParticipant: Codable {
+public class MatchParticipant: Codable { // Used by Match v5
     public var assists: Int
     public var baronKills: Int
     public var bountyLevel: Int
@@ -66,7 +66,7 @@ public class MatchParticipant: Codable {
     public var objectivesStolenAssists: Int
     public var participantId: Int
     public var pentaKills: Int
-    public var perks: Perks
+    public var perks: MatchPerks
     public var physicalDamageDealt: Int
     public var physicalDamageDealtToChampions: Int
     public var physicalDamageTaken: Int
@@ -227,7 +227,7 @@ public class MatchParticipant: Codable {
         case win = "win"
     }
 
-    public init(assists: Int, baronKills: Int, bountyLevel: Int, challenges: [String: Double], champExperience: Int, champLevel: Int, championId: Int, championName: String, championTransform: Int, consumablesPurchased: Int, damageDealtToBuildings: Int, damageDealtToObjectives: Int, damageDealtToTurrets: Int, damageSelfMitigated: Int, deaths: Int, detectorWardsPlaced: Int, doubleKills: Int, dragonKills: Int, eligibleForProgression: Bool, firstBloodAssist: Bool, firstBloodKill: Bool, firstTowerAssist: Bool, firstTowerKill: Bool, gameEndedInEarlySurrender: Bool, gameEndedInSurrender: Bool, goldEarned: Int, goldSpent: Int, individualPosition: String, inhibitorKills: Int, inhibitorTakedowns: Int, inhibitorsLost: Int, item0: Int, item1: Int, item2: Int, item3: Int, item4: Int, item5: Int, item6: Int, itemsPurchased: Int, killingSprees: Int, kills: Int, lane: String, largestCriticalStrike: Int, largestKillingSpree: Int, largestMultiKill: Int, longestTimeSpentLiving: Int, magicDamageDealt: Int, magicDamageDealtToChampions: Int, magicDamageTaken: Int, neutralMinionsKilled: Int, nexusKills: Int, nexusLost: Int, nexusTakedowns: Int, objectivesStolen: Int, objectivesStolenAssists: Int, participantId: Int, pentaKills: Int, perks: Perks, physicalDamageDealt: Int, physicalDamageDealtToChampions: Int, physicalDamageTaken: Int, profileIcon: Int, puuid: String, quadraKills: Int, riotIdName: String, riotIdTagline: String, role: String, sightWardsBoughtInGame: Int, spell1Casts: Int, spell2Casts: Int, spell3Casts: Int, spell4Casts: Int, summoner1Casts: Int, summoner1Id: Int, summoner2Casts: Int, summoner2Id: Int, summonerId: String, summonerLevel: Int, summonerName: String, teamEarlySurrendered: Bool, teamId: Int, teamPosition: String, timeCCingOthers: Int, timePlayed: Int, totalDamageDealt: Int, totalDamageDealtToChampions: Int, totalDamageShieldedOnTeammates: Int, totalDamageTaken: Int, totalHeal: Int, totalHealsOnTeammates: Int, totalMinionsKilled: Int, totalTimeCcDealt: Int, totalTimeSpentDead: Int, totalUnitsHealed: Int, tripleKills: Int, trueDamageDealt: Int, trueDamageDealtToChampions: Int, trueDamageTaken: Int, turretKills: Int, turretTakedowns: Int, turretsLost: Int, unrealKills: Int, visionScore: Int, visionWardsBoughtInGame: Int, wardsKilled: Int, wardsPlaced: Int, win: Bool) {
+    public init(assists: Int, baronKills: Int, bountyLevel: Int, challenges: [String: Double], champExperience: Int, champLevel: Int, championId: Int, championName: String, championTransform: Int, consumablesPurchased: Int, damageDealtToBuildings: Int, damageDealtToObjectives: Int, damageDealtToTurrets: Int, damageSelfMitigated: Int, deaths: Int, detectorWardsPlaced: Int, doubleKills: Int, dragonKills: Int, eligibleForProgression: Bool, firstBloodAssist: Bool, firstBloodKill: Bool, firstTowerAssist: Bool, firstTowerKill: Bool, gameEndedInEarlySurrender: Bool, gameEndedInSurrender: Bool, goldEarned: Int, goldSpent: Int, individualPosition: String, inhibitorKills: Int, inhibitorTakedowns: Int, inhibitorsLost: Int, item0: Int, item1: Int, item2: Int, item3: Int, item4: Int, item5: Int, item6: Int, itemsPurchased: Int, killingSprees: Int, kills: Int, lane: String, largestCriticalStrike: Int, largestKillingSpree: Int, largestMultiKill: Int, longestTimeSpentLiving: Int, magicDamageDealt: Int, magicDamageDealtToChampions: Int, magicDamageTaken: Int, neutralMinionsKilled: Int, nexusKills: Int, nexusLost: Int, nexusTakedowns: Int, objectivesStolen: Int, objectivesStolenAssists: Int, participantId: Int, pentaKills: Int, perks: MatchPerks, physicalDamageDealt: Int, physicalDamageDealtToChampions: Int, physicalDamageTaken: Int, profileIcon: Int, puuid: String, quadraKills: Int, riotIdName: String, riotIdTagline: String, role: String, sightWardsBoughtInGame: Int, spell1Casts: Int, spell2Casts: Int, spell3Casts: Int, spell4Casts: Int, summoner1Casts: Int, summoner1Id: Int, summoner2Casts: Int, summoner2Id: Int, summonerId: String, summonerLevel: Int, summonerName: String, teamEarlySurrendered: Bool, teamId: Int, teamPosition: String, timeCCingOthers: Int, timePlayed: Int, totalDamageDealt: Int, totalDamageDealtToChampions: Int, totalDamageShieldedOnTeammates: Int, totalDamageTaken: Int, totalHeal: Int, totalHealsOnTeammates: Int, totalMinionsKilled: Int, totalTimeCcDealt: Int, totalTimeSpentDead: Int, totalUnitsHealed: Int, tripleKills: Int, trueDamageDealt: Int, trueDamageDealtToChampions: Int, trueDamageTaken: Int, turretKills: Int, turretTakedowns: Int, turretsLost: Int, unrealKills: Int, visionScore: Int, visionWardsBoughtInGame: Int, wardsKilled: Int, wardsPlaced: Int, win: Bool) {
         self.assists = assists
         self.baronKills = baronKills
         self.bountyLevel = bountyLevel
@@ -417,7 +417,7 @@ public class MatchParticipant: Codable {
         self.summonerId = try container.decode(String.self, forKey: .summonerId)
         self.summonerLevel = try container.decode(Int.self, forKey: .summonerLevel)
         self.summonerName = try container.decode(String.self, forKey: .summonerName)
-        self.teamEarlySurrendered = try container.decode(Int.self, forKey: .teamEarlySurrendered)
+        self.teamEarlySurrendered = ((try container.decode(Int.self, forKey: .teamEarlySurrendered)) != 0)
         self.teamId = try container.decode(Int.self, forKey: .teamId)
         self.teamPosition = try container.decode(String.self, forKey: .teamPosition)
         self.timeCCingOthers = try container.decode(Int.self, forKey: .timeCCingOthers)

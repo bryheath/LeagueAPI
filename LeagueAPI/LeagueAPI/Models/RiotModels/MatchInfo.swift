@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MatchInfo: Decodable {
+public class MatchInfo: Decodable { // Match v5 - 'InfoDto'
     
     public var gameCreation: Long
     public var gameDuration: Long

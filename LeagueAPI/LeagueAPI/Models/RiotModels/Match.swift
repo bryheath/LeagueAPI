@@ -10,7 +10,7 @@ import Foundation
 
 public class Match: Decodable {
     
-    public var metadata: MatchMetadata
+    public var metadata: LOLMatchMetadata
     public var info: MatchInfo
     
     enum CodingKeys: String, CodingKey {
@@ -18,14 +18,14 @@ public class Match: Decodable {
         case info = "info"
     }
     
-    public init(metadata: MatchMetadata, info: MatchInfo) {
+    public init(metadata: LOLMatchMetadata, info: MatchInfo) {
         self.metadata = metadata
         self.info = info
     }
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.metadata = try MatchMetadata(container.decode(MatchMetadata.self, forKey: .metadata))
-        self.info = try MatchInfo(container.decode(MatchInfo.self, forKey: .info))
+        self.metadata = try container.decode(LOLMatchMetadata.self, forKey: .metadata)
+        self.info = try container.decode(MatchInfo.self, forKey: .info)
     }
 }

@@ -19,7 +19,7 @@ public class PerkStyle: Codable {
         case style = "style"
     }
 
-    public init(styleDescription: Description, selections: [PerkStyleSelection], style: Int) {
+    public init(styleDescription: String, selections: [PerkStyleSelection], style: Int) {
         self.styleDescription = styleDescription
         self.selections = selections
         self.style = style
