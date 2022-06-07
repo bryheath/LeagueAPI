@@ -12,7 +12,8 @@ internal class MatchMethod: LeagueMethod {
     
     public enum MatchMethods: CustomStringConvertible {
         case ById(id: MatchId)
-        case MatchesByAccountId(id: SummonerPuuid, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?, season: Season?)
+//        case MatchesByAccountId(id: SummonerPuuid, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?, season: Season?)
+        case MatchesByAccountId(id: SummonerPuuid, startTime: Datetime?, endTime: Datetime?, queue: QueueMode?, type: GameType?, start: Int?, count: Int?)
 //        case MatchesByAccountId(id: SummonerPuuid, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?)
         case TimelineById(id: GameId)
         case MatchIdsByTournamentCode(code: TournamentCode)
@@ -60,15 +61,13 @@ internal class MatchMethod: LeagueMethod {
         switch self.method {
         case .ById(let id):
             return "\(commonPath)/matches/\(id)"
-        case .MatchesByAccountId(let id, let beginTime, let endTime, let beginIndex, let endIndex, let championId, let queue):
+        case .MatchesByAccountId(let id, let startTime, let endTime, let queue, let type, _, _):
 //        case .MatchesByAccountId(let id, let beginTime, let endTime, let beginIndex, let endIndex, let championId, let queue, let season):
             var queryParameters: [String : Any] = [:]
-            if let beginTime = beginTime, let timestamp = beginTime.intervalFrom1970() { queryParameters["beginTime"] = Long(timestamp) }
+            if let startTime = startTime, let timestamp = startTime.intervalFrom1970() { queryParameters["startTime"] = Long(timestamp) }
             if let endTime = endTime, let timestamp = endTime.intervalFrom1970() { queryParameters["endTime"] = Long(timestamp) }
-            if let beginIndex = beginIndex { queryParameters["beginIndex"] = beginIndex }
-            if let endIndex = endIndex { queryParameters["endIndex"] = endIndex }
-            if let championId = championId { queryParameters["champion"] = championId }
             if let queue = queue { queryParameters["queue"] = queue.mode.rawValue }
+            if let type = type { queryParameters["type"] = type.type.rawValue }
             //if let season = season { queryParameters["season"] = season.season.rawValue }
             var queryParametersUrl: String = queryParameters.count == 0 ? "" : "?"
             for parameter in queryParameters {

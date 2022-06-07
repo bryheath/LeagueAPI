@@ -23,25 +23,15 @@ internal class MatchBusiness {
         switch method {
         case .ById, .ByIdAndTournamentCode, .MatchIdsByTournamentCode, .TimelineById:
             return
-        case .MatchesByAccountId(_, let beginTime, let endTime, let beginIndex, let endIndex, _, _, _):
+        case .MatchesByAccountId(_, let startTime, let endTime, _, _, _, _):
             if let endTime = endTime {
-                if let beginTime = beginTime {
-                    if beginTime >= endTime {
-                        Logger.warning("getMatchList parameter endTime must be greater than beginTime (Here beginTime=\(beginTime) and endTime=\(endTime). Call will result in BadRequest(400) from Riot's API")
+                if let startTime = startTime {
+                    if startTime >= endTime {
+                        Logger.warning("getMatchList parameter endTime must be greater than beginTime (Here startTime=\(startTime) and endTime=\(endTime). Call will result in BadRequest(400) from Riot's API")
                     }
                 }
                 else {
                     Logger.warning("getMatchList parameter endTime was specified without beginTime. They will both be ignored by Riot's API")
-                }
-            }
-            if let beginIndex = beginIndex {
-                if let endIndex = endIndex {
-                    if endIndex <= beginIndex {
-                        Logger.warning("getMatchList parameter endIndex must be greater than beginIndex. Call will result in BadRequest(400)")
-                    }
-                    else if beginIndex + 100 < endIndex {
-                        Logger.warning("getMatchList parameter endIndex must not be greater than beginIndex+100. Call will result in BadRequest(400)")
-                    }
                 }
             }
         }
