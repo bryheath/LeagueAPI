@@ -14,7 +14,7 @@ internal class DelayedTask {
     private var task: () -> Void
     
     public init(taskName: String, task: @escaping () -> Void) {
-        let frameworkBundle: Bundle = Bundle(for: LeagueAPI.self)
+        let frameworkBundle: Bundle = Bundle(for: League_API.self)
         let queueName: String = "\(frameworkBundle.bundleIdentifier ?? "com.kelmatou.LeagueAPI").\(taskName)"
         self.queue = DispatchQueue(label: queueName)
         self.task = task

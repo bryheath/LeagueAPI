@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MatchPerks: Codable {
+public class MatchPerks: Decodable {
     public var statPerks: StatPerks
     public var styles: [PerkStyle]
 

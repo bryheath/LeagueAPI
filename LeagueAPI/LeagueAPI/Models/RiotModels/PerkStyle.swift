@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class PerkStyle: Codable {
+public class PerkStyle: Decodable {
     public var styleDescription: String
     public var selections: [PerkStyleSelection]
-    public var style: Int
+    public var style: RunePathId
 
     enum CodingKeys: String, CodingKey {
         case styleDescription = "styleDescription"
@@ -19,7 +19,7 @@ public class PerkStyle: Codable {
         case style = "style"
     }
 
-    public init(styleDescription: String, selections: [PerkStyleSelection], style: Int) {
+    public init(styleDescription: String, selections: [PerkStyleSelection], style: RunePathId) {
         self.styleDescription = styleDescription
         self.selections = selections
         self.style = style
@@ -29,7 +29,7 @@ public class PerkStyle: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.styleDescription = try container.decode(String.self, forKey: .styleDescription)
         self.selections = try container.decode([PerkStyleSelection].self, forKey: .selections)
-        self.style = try container.decode(Int.self, forKey: .style)
+        self.style = try RunePathId(container.decode(Long.self, forKey: .style))
     }
 }
 

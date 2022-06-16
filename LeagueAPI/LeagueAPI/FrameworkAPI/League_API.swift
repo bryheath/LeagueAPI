@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class LeagueAPI {
+public class League_API { // Changed from LeagueAPI to avoid compiler errors in Xcode 12.4
     
     public private(set) var riotAPI: RiotAPI
     public private(set) var lolAPI: LoLAPI

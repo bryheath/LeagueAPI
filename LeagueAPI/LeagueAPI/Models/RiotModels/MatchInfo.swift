@@ -14,13 +14,13 @@ public class MatchInfo: Decodable { // Match v5 - 'InfoDto'
     public var gameDuration: Long
     public var gameEndTimestamp: Long
     public var gameId: Long
-    public var gameMode: String
+    public var gameMode: GameMode
     public var gameName: String
     public var gameStartTimestamp: Long
-    public var gameType: String
+    public var gameType: GameType
     public var gameVersion: String
     public var mapId: Int
-    public var participants: [Participant]
+    public var participants: [MatchParticipant]
     public var platformId: String
     public var queueId: Int
     public var teams: [Team]
@@ -43,7 +43,7 @@ public class MatchInfo: Decodable { // Match v5 - 'InfoDto'
         case teams = "teams"
         case tournamentCode = "tournamentCode"
     }
-    public init(gameCreation: Long, gameDuration: Long, gameEndTimestamp: Long, gameId: Long, gameMode: String, gameName: String, gameStartTimestamp: Long, gameType: String, gameVersion: String, mapId: Int, participants: [Participant], platformId: String, queueId: Int, teams: [Team], tournamentCode: String) {
+    public init(gameCreation: Long, gameDuration: Long, gameEndTimestamp: Long, gameId: Long, gameMode: GameMode, gameName: String, gameStartTimestamp: Long, gameType: GameType, gameVersion: String, mapId: Int, participants: [MatchParticipant], platformId: String, queueId: Int, teams: [Team], tournamentCode: String) {
         self.gameCreation = gameCreation
         self.gameDuration = gameDuration
         self.gameEndTimestamp = gameEndTimestamp
@@ -68,13 +68,13 @@ public class MatchInfo: Decodable { // Match v5 - 'InfoDto'
         self.gameDuration = try container.decode(Long.self, forKey: .gameDuration)
         self.gameEndTimestamp = try container.decode(Long.self, forKey: .gameEndTimestamp)
         self.gameId = try container.decode(Long.self, forKey: .gameId)
-        self.gameMode = try container.decode(String.self, forKey: .gameMode)
+        self.gameMode = try GameMode(container.decode(String.self, forKey: .gameMode))
         self.gameName = try container.decode(String.self, forKey: .gameName)
         self.gameStartTimestamp = try container.decode(Long.self, forKey: .gameStartTimestamp)
-        self.gameType = try container.decode(String.self, forKey: .gameType)
+        self.gameType = try GameType(container.decode(String.self, forKey: .gameType))
         self.gameVersion = try container.decode(String.self, forKey: .gameVersion)
         self.mapId = try container.decode(Int.self, forKey: .mapId)
-        self.participants = try container.decode([Participant].self, forKey: .participants)
+        self.participants = try container.decode([MatchParticipant].self, forKey: .participants)
         self.platformId = try container.decode(String.self, forKey: .platformId)
         self.queueId = try container.decode(Int.self, forKey: .queueId)
         self.teams = try container.decode([Team].self, forKey: .teams)

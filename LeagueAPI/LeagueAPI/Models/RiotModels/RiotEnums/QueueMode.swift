@@ -280,7 +280,8 @@ public class QueueMode {
         self.place = place
     }
     
-    internal convenience init(_ id: Long) {
+    //internal convenience init(_ id: Long) {
+    public convenience init(_ id: Long) {
         switch id {
         case QueueModes.Custom.rawValue:
             self.init(mode: .Custom, place: .Unknown)

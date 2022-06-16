@@ -11,7 +11,7 @@ import Foundation
 internal class LocalAssets {
     
     public static func getAssetData(filename: String) -> Data? {
-        let leagueAPIBundle: Bundle = Bundle(for: LeagueAPI.self)
+        let leagueAPIBundle: Bundle = Bundle(for: League_API.self)
         guard let ressourceUrl = leagueAPIBundle.url(forResource: filename, withExtension: nil) else { return nil }
         do {
             return try Data(contentsOf: ressourceUrl)

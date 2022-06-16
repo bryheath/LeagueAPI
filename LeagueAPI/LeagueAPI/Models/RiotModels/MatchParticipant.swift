@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class MatchParticipant: Codable { // Used by Match v5
+public class MatchParticipant: Decodable { // Used by Match v5
     public var assists: Int
     public var baronKills: Int
     public var bountyLevel: Int
     public var challenges: [Challenges]
     public var champExperience: Int
     public var champLevel: Int
-    public var championId: Int
+    public var championId: ChampionId
     public var championName: String
     public var championTransform: Int
     public var consumablesPurchased: Int
@@ -40,13 +40,13 @@ public class MatchParticipant: Codable { // Used by Match v5
     public var inhibitorKills: Int
     public var inhibitorTakedowns: Int
     public var inhibitorsLost: Int
-    public var item0: Int
-    public var item1: Int
-    public var item2: Int
-    public var item3: Int
-    public var item4: Int
-    public var item5: Int
-    public var item6: Int
+    public var item0: ItemId
+    public var item1: ItemId
+    public var item2: ItemId
+    public var item3: ItemId
+    public var item4: ItemId
+    public var item5: ItemId
+    public var item6: ItemId
     public var itemsPurchased: Int
     public var killingSprees: Int
     public var kills: Int
@@ -71,7 +71,7 @@ public class MatchParticipant: Codable { // Used by Match v5
     public var physicalDamageDealtToChampions: Int
     public var physicalDamageTaken: Int
     public var profileIcon: Int
-    public var puuid: String
+    public var puuid: SummonerPuuid
     public var quadraKills: Int
     public var riotIdName: String
     public var riotIdTagline: String
@@ -82,9 +82,9 @@ public class MatchParticipant: Codable { // Used by Match v5
     public var spell3Casts: Int
     public var spell4Casts: Int
     public var summoner1Casts: Int
-    public var summoner1Id: Int
+    public var summoner1Id: SummonerSpellId
     public var summoner2Casts: Int
-    public var summoner2Id: Int
+    public var summoner2Id: SummonerSpellId
     public var summonerId: String
     public var summonerLevel: Int
     public var summonerName: String
@@ -227,7 +227,7 @@ public class MatchParticipant: Codable { // Used by Match v5
         case win = "win"
     }
 
-    public init(assists: Int, baronKills: Int, bountyLevel: Int, challenges: [Challenges], champExperience: Int, champLevel: Int, championId: Int, championName: String, championTransform: Int, consumablesPurchased: Int, damageDealtToBuildings: Int, damageDealtToObjectives: Int, damageDealtToTurrets: Int, damageSelfMitigated: Int, deaths: Int, detectorWardsPlaced: Int, doubleKills: Int, dragonKills: Int, eligibleForProgression: Bool, firstBloodAssist: Bool, firstBloodKill: Bool, firstTowerAssist: Bool, firstTowerKill: Bool, gameEndedInEarlySurrender: Bool, gameEndedInSurrender: Bool, goldEarned: Int, goldSpent: Int, individualPosition: String, inhibitorKills: Int, inhibitorTakedowns: Int, inhibitorsLost: Int, item0: Int, item1: Int, item2: Int, item3: Int, item4: Int, item5: Int, item6: Int, itemsPurchased: Int, killingSprees: Int, kills: Int, lane: String, largestCriticalStrike: Int, largestKillingSpree: Int, largestMultiKill: Int, longestTimeSpentLiving: Int, magicDamageDealt: Int, magicDamageDealtToChampions: Int, magicDamageTaken: Int, neutralMinionsKilled: Int, nexusKills: Int, nexusLost: Int, nexusTakedowns: Int, objectivesStolen: Int, objectivesStolenAssists: Int, participantId: Int, pentaKills: Int, perks: MatchPerks, physicalDamageDealt: Int, physicalDamageDealtToChampions: Int, physicalDamageTaken: Int, profileIcon: Int, puuid: String, quadraKills: Int, riotIdName: String, riotIdTagline: String, role: String, sightWardsBoughtInGame: Int, spell1Casts: Int, spell2Casts: Int, spell3Casts: Int, spell4Casts: Int, summoner1Casts: Int, summoner1Id: Int, summoner2Casts: Int, summoner2Id: Int, summonerId: String, summonerLevel: Int, summonerName: String, teamEarlySurrendered: Bool, teamId: Int, teamPosition: String, timeCCingOthers: Int, timePlayed: Int, totalDamageDealt: Int, totalDamageDealtToChampions: Int, totalDamageShieldedOnTeammates: Int, totalDamageTaken: Int, totalHeal: Int, totalHealsOnTeammates: Int, totalMinionsKilled: Int, totalTimeCcDealt: Int, totalTimeSpentDead: Int, totalUnitsHealed: Int, tripleKills: Int, trueDamageDealt: Int, trueDamageDealtToChampions: Int, trueDamageTaken: Int, turretKills: Int, turretTakedowns: Int, turretsLost: Int, unrealKills: Int, visionScore: Int, visionWardsBoughtInGame: Int, wardsKilled: Int, wardsPlaced: Int, win: Bool) {
+    public init(assists: Int, baronKills: Int, bountyLevel: Int, challenges: [Challenges], champExperience: Int, champLevel: Int, championId: ChampionId, championName: String, championTransform: Int, consumablesPurchased: Int, damageDealtToBuildings: Int, damageDealtToObjectives: Int, damageDealtToTurrets: Int, damageSelfMitigated: Int, deaths: Int, detectorWardsPlaced: Int, doubleKills: Int, dragonKills: Int, eligibleForProgression: Bool, firstBloodAssist: Bool, firstBloodKill: Bool, firstTowerAssist: Bool, firstTowerKill: Bool, gameEndedInEarlySurrender: Bool, gameEndedInSurrender: Bool, goldEarned: Int, goldSpent: Int, individualPosition: String, inhibitorKills: Int, inhibitorTakedowns: Int, inhibitorsLost: Int, item0: ItemId, item1: ItemId, item2: ItemId, item3: ItemId, item4: ItemId, item5: ItemId, item6: ItemId, itemsPurchased: Int, killingSprees: Int, kills: Int, lane: String, largestCriticalStrike: Int, largestKillingSpree: Int, largestMultiKill: Int, longestTimeSpentLiving: Int, magicDamageDealt: Int, magicDamageDealtToChampions: Int, magicDamageTaken: Int, neutralMinionsKilled: Int, nexusKills: Int, nexusLost: Int, nexusTakedowns: Int, objectivesStolen: Int, objectivesStolenAssists: Int, participantId: Int, pentaKills: Int, perks: MatchPerks, physicalDamageDealt: Int, physicalDamageDealtToChampions: Int, physicalDamageTaken: Int, profileIcon: Int, puuid: SummonerPuuid, quadraKills: Int, riotIdName: String, riotIdTagline: String, role: String, sightWardsBoughtInGame: Int, spell1Casts: Int, spell2Casts: Int, spell3Casts: Int, spell4Casts: Int, summoner1Casts: Int, summoner1Id: SummonerSpellId, summoner2Casts: Int, summoner2Id: SummonerSpellId, summonerId: String, summonerLevel: Int, summonerName: String, teamEarlySurrendered: Bool, teamId: Int, teamPosition: String, timeCCingOthers: Int, timePlayed: Int, totalDamageDealt: Int, totalDamageDealtToChampions: Int, totalDamageShieldedOnTeammates: Int, totalDamageTaken: Int, totalHeal: Int, totalHealsOnTeammates: Int, totalMinionsKilled: Int, totalTimeCcDealt: Int, totalTimeSpentDead: Int, totalUnitsHealed: Int, tripleKills: Int, trueDamageDealt: Int, trueDamageDealtToChampions: Int, trueDamageTaken: Int, turretKills: Int, turretTakedowns: Int, turretsLost: Int, unrealKills: Int, visionScore: Int, visionWardsBoughtInGame: Int, wardsKilled: Int, wardsPlaced: Int, win: Bool) {
         self.assists = assists
         self.baronKills = baronKills
         self.bountyLevel = bountyLevel
@@ -345,7 +345,7 @@ public class MatchParticipant: Codable { // Used by Match v5
         self.challenges = try container.decode([Challenges].self, forKey: .challenges)
         self.champExperience = try container.decode(Int.self, forKey: .champExperience)
         self.champLevel = try container.decode(Int.self, forKey: .champLevel)
-        self.championId = try container.decode(Int.self, forKey: .championId)
+        self.championId = try ChampionId(container.decode(Long.self, forKey: .championId))
         self.championName = try container.decode(String.self, forKey: .championName)
         self.championTransform = try container.decode(Int.self, forKey: .championTransform)
         self.consumablesPurchased = try container.decode(Int.self, forKey: .consumablesPurchased)
@@ -370,13 +370,13 @@ public class MatchParticipant: Codable { // Used by Match v5
         self.inhibitorKills = try container.decode(Int.self, forKey: .inhibitorKills)
         self.inhibitorTakedowns = try container.decode(Int.self, forKey: .inhibitorTakedowns)
         self.inhibitorsLost = try container.decode(Int.self, forKey: .inhibitorsLost)
-        self.item0 = try container.decode(Int.self, forKey: .item0)
-        self.item1 = try container.decode(Int.self, forKey: .item1)
-        self.item2 = try container.decode(Int.self, forKey: .item2)
-        self.item3 = try container.decode(Int.self, forKey: .item3)
-        self.item4 = try container.decode(Int.self, forKey: .item4)
-        self.item5 = try container.decode(Int.self, forKey: .item5)
-        self.item6 = try container.decode(Int.self, forKey: .item6)
+        self.item0 = try ItemId(container.decode(Int.self, forKey: .item0))
+        self.item1 = try ItemId(container.decode(Int.self, forKey: .item1))
+        self.item2 = try ItemId(container.decode(Int.self, forKey: .item2))
+        self.item3 = try ItemId(container.decode(Int.self, forKey: .item3))
+        self.item4 = try ItemId(container.decode(Int.self, forKey: .item4))
+        self.item5 = try ItemId(container.decode(Int.self, forKey: .item5))
+        self.item6 = try ItemId(container.decode(Int.self, forKey: .item6))
         self.itemsPurchased = try container.decode(Int.self, forKey: .itemsPurchased)
         self.killingSprees = try container.decode(Int.self, forKey: .killingSprees)
         self.kills = try container.decode(Int.self, forKey: .kills)
@@ -401,7 +401,7 @@ public class MatchParticipant: Codable { // Used by Match v5
         self.physicalDamageDealtToChampions = try container.decode(Int.self, forKey: .physicalDamageDealtToChampions)
         self.physicalDamageTaken = try container.decode(Int.self, forKey: .physicalDamageTaken)
         self.profileIcon = try container.decode(Int.self, forKey: .profileIcon)
-        self.puuid = try container.decode(String.self, forKey: .puuid)
+        self.puuid = try SummonerPuuid(container.decode(String.self, forKey: .puuid))
         self.quadraKills = try container.decode(Int.self, forKey: .quadraKills)
         self.riotIdName = try container.decode(String.self, forKey: .riotIdName)
         self.riotIdTagline = try container.decode(String.self, forKey: .riotIdTagline)
@@ -412,9 +412,9 @@ public class MatchParticipant: Codable { // Used by Match v5
         self.spell3Casts = try container.decode(Int.self, forKey: .spell3Casts)
         self.spell4Casts = try container.decode(Int.self, forKey: .spell4Casts)
         self.summoner1Casts = try container.decode(Int.self, forKey: .summoner1Casts)
-        self.summoner1Id = try container.decode(Int.self, forKey: .summoner1Id)
+        self.summoner1Id = try SummonerSpellId(container.decode(Long.self, forKey: .summoner1Id))
         self.summoner2Casts = try container.decode(Int.self, forKey: .summoner2Casts)
-        self.summoner2Id = try container.decode(Int.self, forKey: .summoner2Id)
+        self.summoner2Id = try SummonerSpellId(container.decode(Long.self, forKey: .summoner2Id))
         self.summonerId = try container.decode(String.self, forKey: .summonerId)
         self.summonerLevel = try container.decode(Int.self, forKey: .summonerLevel)
         self.summonerName = try container.decode(String.self, forKey: .summonerName)
