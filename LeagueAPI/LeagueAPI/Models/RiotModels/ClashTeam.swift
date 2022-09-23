@@ -46,7 +46,7 @@ public class ClashTeam: Decodable {
         self.teamId = try TeamId(container.decode(String.self, forKey: .teamId))
         self.tournamentId = try TournamentId(container.decode(Long.self, forKey: .tournamentId))
         self.name = try container.decode(String.self, forKey: .name)
-        self.iconId = try ProfileIconId(container.decode(Long.self, forKey: .iconId))
+        self.iconId = try ProfileIconId(container.decode(Int.self, forKey: .iconId))
         self.tier = try container.decode(Int.self, forKey: .tier)
         self.captainId = try SummonerId(container.decode(String.self, forKey: .captainId))
         self.abbreviation = try container.decode(String.self, forKey: .abbreviation)

@@ -45,7 +45,7 @@ public class Summoner: Decodable {
         self.puuid = try SummonerPuuid(container.decode(String.self, forKey: .puuid))
         self.name = try container.decode(String.self, forKey: .name)
         self.level = try container.decode(Long.self, forKey: .level)
-        self.iconId = try ProfileIconId(container.decode(Long.self, forKey: .iconId))
+        self.iconId = try ProfileIconId(container.decode(Int.self, forKey: .iconId))
         let timestamp: Long = try container.decode(Long.self, forKey: .revisionDate)
         self.revisionDate = Datetime(timestamp: timestamp)
     }

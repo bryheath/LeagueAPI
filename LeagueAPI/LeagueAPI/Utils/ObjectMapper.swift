@@ -43,6 +43,8 @@ internal class ObjectMapper {
             }
             catch {
             }
+            let jsondump = String(data: data, encoding: String.Encoding.utf8)
+            print(jsondump ?? "Couldn't Dump")
             return (nil, "Could not parse \(type) data from json \(errorReason == nil ? "" : "because \(errorReason!)")")
         }
         else {

@@ -4,7 +4,7 @@
 //
 //  Created by Antoine Clop on 7/28/18.
 //  Copyright © 2018 Antoine Clop. All rights reserved.
-//
+//  Last Updated: 08/08/22 - 12.13
 
 import Foundation
 
@@ -36,6 +36,7 @@ public class GameMode {
         case TutorialModule3 = "TUTORIAL_MODULE_3"
         case TeamFightTactics = "TEAMFIGHTACTICS" // unverified
         case NexusBlitz = "NEXUSBLITZ"
+        case UltBook = "ULTBOOK"
         case Unknown = "Unknown"
         
         public var description: String {
@@ -90,6 +91,8 @@ public class GameMode {
                 return "TeamFightTactics"
             case .NexusBlitz:
                 return "Nexus Blitz"
+            case .UltBook:
+                return "Ultimate Spellbook"
             case .Unknown:
                 return "Unknown"
             }
@@ -156,6 +159,8 @@ public class GameMode {
             self.mode = GameModes.TutorialModule3
         case GameModes.NexusBlitz.rawValue:
             self.mode = GameModes.NexusBlitz
+        case GameModes.UltBook.rawValue:
+            self.mode = GameModes.UltBook
         default:
             Logger.warning("Game mode \"\(gameMode)\" unknown (check for LeagueAPI update)")
             self.mode = .Unknown

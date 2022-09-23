@@ -96,9 +96,12 @@ public class LoLAPI: APIClient {
     
     // MARK: - Match
     
-    public func getMatch(by matchId: MatchId, on region: Region, handler: @escaping (Match?, String?) -> Void) {
+    public func getMatch(by matchId: LOLMatchId, on region: Region, handler: @escaping (Match?, String?) -> Void) {
         MatchBusiness.getMatch(method: .ById(id: matchId), region: region, key: self.key, handler: handler)
     }
+//    public func getMatch(by gameId: GameId, on region: Region, handler: @escaping (Match?, String?) -> Void) {
+//        MatchBusiness.getMatch(method: .ById(id: gameId), region: region, key: self.key, handler: handler)
+//    }
     
 //    public func getMatchList(by puuid: SummonerPuuid, on region: Region, beginTime: Datetime? = nil, endTime: Datetime? = nil, beginIndex: Int? = nil, endIndex: Int? = nil, championId: ChampionId? = nil, queue: QueueMode? = nil, season: Season? = nil, handler: @escaping (MatchList?, String?) -> Void) {
 //        MatchBusiness.getMatch(method: .MatchesByAccountId(id: puuid, beginTime: beginTime, endTime: endTime, beginIndex: beginIndex, endIndex: endIndex, championId: championId, queue: queue, season: season), region: region, key: self.key, handler: handler)

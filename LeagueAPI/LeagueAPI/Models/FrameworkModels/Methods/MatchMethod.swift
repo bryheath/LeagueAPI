@@ -11,7 +11,8 @@ import Foundation
 internal class MatchMethod: LeagueMethod {
     
     public enum MatchMethods: CustomStringConvertible {
-        case ById(id: MatchId)
+        case ById(id: LOLMatchId)
+//        case ById(id: GameId)
 //        case MatchesByAccountId(id: SummonerPuuid, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?, season: Season?)
         case MatchesByAccountId(id: SummonerPuuid, startTime: Datetime?, endTime: Datetime?, queue: QueueMode?, type: GameType?, start: Int?, count: Int?)
 //        case MatchesByAccountId(id: SummonerPuuid, beginTime: Datetime?, endTime: Datetime?, beginIndex: Int?, endIndex: Int?, championId: ChampionId?, queue: QueueMode?)
@@ -61,7 +62,7 @@ internal class MatchMethod: LeagueMethod {
         switch self.method {
         case .ById(let id):
             return "\(commonPath)/matches/\(id)"
-        case .MatchesByAccountId(let id, let startTime, let endTime, let queue, let type, _, _):
+        case .MatchesByAccountId(let id, let startTime, let endTime, let queue, let type, _, let count):
 //        case .MatchesByAccountId(let id, let beginTime, let endTime, let beginIndex, let endIndex, let championId, let queue, let season):
             var queryParameters: [String : Any] = [:]
             if let startTime = startTime, let timestamp = startTime.intervalFrom1970() { queryParameters["startTime"] = Long(timestamp) }
@@ -69,11 +70,13 @@ internal class MatchMethod: LeagueMethod {
             if let queue = queue { queryParameters["queue"] = queue.mode.rawValue }
             if let type = type { queryParameters["type"] = type.type.rawValue }
             //if let season = season { queryParameters["season"] = season.season.rawValue }
+            if let count = count { queryParameters["count"] = Int(count) }
             var queryParametersUrl: String = queryParameters.count == 0 ? "" : "?"
             for parameter in queryParameters {
                 queryParametersUrl += "\(queryParametersUrl == "" ? "" : "&")\(parameter.key)=\(parameter.value)"
             }
-            return "\(commonPath)/matches/by-puuid/\(id)\("/ids")"
+            print("\(commonPath)/matches/by-puuid/\(id)\("/ids\(queryParametersUrl)")")
+            return "\(commonPath)/matches/by-puuid/\(id)\("/ids\(queryParametersUrl)")"
             
         case .TimelineById(let id):
             return "\(commonPath)/timelines/by-match/\(id)"

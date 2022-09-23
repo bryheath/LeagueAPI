@@ -13,7 +13,7 @@ public class MatchInfo: Decodable { // Match v5 - 'InfoDto'
     public var gameCreation: Long
     public var gameDuration: Long
     public var gameEndTimestamp: Long
-    public var gameId: Long
+    public var gameId: GameId
     public var gameMode: GameMode
     public var gameName: String
     public var gameStartTimestamp: Long
@@ -43,7 +43,8 @@ public class MatchInfo: Decodable { // Match v5 - 'InfoDto'
         case teams = "teams"
         case tournamentCode = "tournamentCode"
     }
-    public init(gameCreation: Long, gameDuration: Long, gameEndTimestamp: Long, gameId: Long, gameMode: GameMode, gameName: String, gameStartTimestamp: Long, gameType: GameType, gameVersion: String, mapId: Int, participants: [MatchParticipant], platformId: String, queueId: Int, teams: [Team], tournamentCode: String) {
+    public init(gameCreation: Long, gameDuration: Long, gameEndTimestamp: Long, gameId: GameId, gameMode: GameMode, gameName: String, gameStartTimestamp: Long, gameType: GameType, gameVersion: String, mapId: Int, participants: [MatchParticipant], platformId: String, queueId: Int, teams: [Team], tournamentCode: String) {
+        
         self.gameCreation = gameCreation
         self.gameDuration = gameDuration
         self.gameEndTimestamp = gameEndTimestamp
@@ -67,7 +68,7 @@ public class MatchInfo: Decodable { // Match v5 - 'InfoDto'
         self.gameCreation = try container.decode(Long.self, forKey: .gameCreation)
         self.gameDuration = try container.decode(Long.self, forKey: .gameDuration)
         self.gameEndTimestamp = try container.decode(Long.self, forKey: .gameEndTimestamp)
-        self.gameId = try container.decode(Long.self, forKey: .gameId)
+        self.gameId = try GameId(container.decode(Long.self, forKey: .gameId))
         self.gameMode = try GameMode(container.decode(String.self, forKey: .gameMode))
         self.gameName = try container.decode(String.self, forKey: .gameName)
         self.gameStartTimestamp = try container.decode(Long.self, forKey: .gameStartTimestamp)

@@ -14,7 +14,7 @@ public class PerkStyle: Decodable {
     public var style: RunePathId
 
     enum CodingKeys: String, CodingKey {
-        case styleDescription = "styleDescription"
+        case styleDescription = "description"
         case selections = "selections"
         case style = "style"
     }

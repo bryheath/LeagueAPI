@@ -89,6 +89,7 @@ public class QueueMode {
         case TeamFightTacticsTest = 1111
         case NexusBlitzFirstEdition = 1200 // Queue mode deprecated in patch 9.2
         case NexusBlitz = 1300
+        case UltBook = 1400
         case Tutorial1 = 2000
         case Tutorial2 = 2010
         case Tutorial3 = 2020
@@ -258,6 +259,8 @@ public class QueueMode {
                 return "Tutorial (Part 2)"
             case .Tutorial3:
                 return "Tutorial (Part 3)"
+            case .UltBook:
+                return "Ultimate Spellbook"
             case .Unknown:
                 return "Unknown"
             }
@@ -445,6 +448,8 @@ public class QueueMode {
             self.init(mode: .Tutorial2, place: .SummonersRift)
         case QueueModes.Tutorial3.rawValue:
             self.init(mode: .Tutorial3, place: .SummonersRift)
+        case QueueModes.UltBook.rawValue:
+            self.init(mode: .UltBook, place: .SummonersRift)
         default:
             Logger.warning("Queue mode id \"\(id)\" unknown (check for LeagueAPI update)")
             self.init(mode: .Unknown, place: .Unknown)

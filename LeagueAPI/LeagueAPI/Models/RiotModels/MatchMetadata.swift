@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class MatchMetadata<MatchId: Identifier<String>>: Decodable {
+public class MatchMetadata<LOLMatchId: Identifier<String>>: Decodable {
     
     public var dataVersion: String
     public var participants: [SummonerPuuid]
-    public var gameId: MatchId
+    public var gameId: LOLMatchId
     
     enum CodingKeys: String, CodingKey {
         case dataVersion = "data_version"
@@ -20,7 +20,7 @@ public class MatchMetadata<MatchId: Identifier<String>>: Decodable {
         case gameId = "match_id"
     }
     
-    public init(dataVersion: String, participants: [SummonerPuuid], gameId: MatchId) {
+    public init(dataVersion: String, participants: [SummonerPuuid], gameId: LOLMatchId) {
         self.dataVersion = dataVersion
         self.participants = participants
         self.gameId = gameId
@@ -30,6 +30,6 @@ public class MatchMetadata<MatchId: Identifier<String>>: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.dataVersion = try container.decode(String.self, forKey: .dataVersion)
         self.participants = try (container.decode([String].self, forKey: .participants)).map({ return SummonerPuuid($0) })
-        self.gameId = try MatchId(container.decode(String.self, forKey: .gameId))
+        self.gameId = try LOLMatchId(container.decode(String.self, forKey: .gameId))
     }
 }

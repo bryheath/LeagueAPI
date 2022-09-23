@@ -11,7 +11,7 @@ import Foundation
 public class LOLMatchMetadata: Decodable {
     
     public var dataVersion: String
-    public var matchId: String
+    public var matchId: LOLMatchId
     public var participants: [String]
     
     enum CodingKeys: String, CodingKey {
@@ -20,7 +20,7 @@ public class LOLMatchMetadata: Decodable {
         case matchId = "matchId"
         case participants = "participants"
     }
-    public init(dataVersion: String, matchId: String, participants: [String]) {
+    public init(dataVersion: String, matchId: LOLMatchId, participants: [String]) {
         self.dataVersion = dataVersion
         self.matchId = matchId
         self.participants = participants
@@ -30,7 +30,7 @@ public class LOLMatchMetadata: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.dataVersion = try container.decode(String.self, forKey: .dataVersion)
-        self.matchId = try container.decode(String.self, forKey: .matchId)
+        self.matchId = try LOLMatchId(container.decode(String.self, forKey: .matchId))
         self.participants = try container.decode([String].self, forKey: .participants)
     }
 }

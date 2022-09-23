@@ -12,7 +12,7 @@ public class MatchParticipant: Decodable { // Used by Match v5
     public var assists: Int
     public var baronKills: Int
     public var bountyLevel: Int
-    public var challenges: [Challenges]
+    public var challenges: Challenges
     public var champExperience: Int
     public var champLevel: Int
     public var championId: ChampionId
@@ -70,7 +70,7 @@ public class MatchParticipant: Decodable { // Used by Match v5
     public var physicalDamageDealt: Int
     public var physicalDamageDealtToChampions: Int
     public var physicalDamageTaken: Int
-    public var profileIcon: Int
+    public var profileIcon: ProfileIconId
     public var puuid: SummonerPuuid
     public var quadraKills: Int
     public var riotIdName: String
@@ -85,11 +85,11 @@ public class MatchParticipant: Decodable { // Used by Match v5
     public var summoner1Id: SummonerSpellId
     public var summoner2Casts: Int
     public var summoner2Id: SummonerSpellId
-    public var summonerId: String
+    public var summonerId: SummonerId
     public var summonerLevel: Int
     public var summonerName: String
     public var teamEarlySurrendered: Bool
-    public var teamId: Int
+    public var teamId: LOLTeamId
     public var teamPosition: String
     public var timeCCingOthers: Int
     public var timePlayed: Int
@@ -227,7 +227,7 @@ public class MatchParticipant: Decodable { // Used by Match v5
         case win = "win"
     }
 
-    public init(assists: Int, baronKills: Int, bountyLevel: Int, challenges: [Challenges], champExperience: Int, champLevel: Int, championId: ChampionId, championName: String, championTransform: Int, consumablesPurchased: Int, damageDealtToBuildings: Int, damageDealtToObjectives: Int, damageDealtToTurrets: Int, damageSelfMitigated: Int, deaths: Int, detectorWardsPlaced: Int, doubleKills: Int, dragonKills: Int, eligibleForProgression: Bool, firstBloodAssist: Bool, firstBloodKill: Bool, firstTowerAssist: Bool, firstTowerKill: Bool, gameEndedInEarlySurrender: Bool, gameEndedInSurrender: Bool, goldEarned: Int, goldSpent: Int, individualPosition: String, inhibitorKills: Int, inhibitorTakedowns: Int, inhibitorsLost: Int, item0: ItemId, item1: ItemId, item2: ItemId, item3: ItemId, item4: ItemId, item5: ItemId, item6: ItemId, itemsPurchased: Int, killingSprees: Int, kills: Int, lane: String, largestCriticalStrike: Int, largestKillingSpree: Int, largestMultiKill: Int, longestTimeSpentLiving: Int, magicDamageDealt: Int, magicDamageDealtToChampions: Int, magicDamageTaken: Int, neutralMinionsKilled: Int, nexusKills: Int, nexusLost: Int, nexusTakedowns: Int, objectivesStolen: Int, objectivesStolenAssists: Int, participantId: Int, pentaKills: Int, perks: MatchPerks, physicalDamageDealt: Int, physicalDamageDealtToChampions: Int, physicalDamageTaken: Int, profileIcon: Int, puuid: SummonerPuuid, quadraKills: Int, riotIdName: String, riotIdTagline: String, role: String, sightWardsBoughtInGame: Int, spell1Casts: Int, spell2Casts: Int, spell3Casts: Int, spell4Casts: Int, summoner1Casts: Int, summoner1Id: SummonerSpellId, summoner2Casts: Int, summoner2Id: SummonerSpellId, summonerId: String, summonerLevel: Int, summonerName: String, teamEarlySurrendered: Bool, teamId: Int, teamPosition: String, timeCCingOthers: Int, timePlayed: Int, totalDamageDealt: Int, totalDamageDealtToChampions: Int, totalDamageShieldedOnTeammates: Int, totalDamageTaken: Int, totalHeal: Int, totalHealsOnTeammates: Int, totalMinionsKilled: Int, totalTimeCcDealt: Int, totalTimeSpentDead: Int, totalUnitsHealed: Int, tripleKills: Int, trueDamageDealt: Int, trueDamageDealtToChampions: Int, trueDamageTaken: Int, turretKills: Int, turretTakedowns: Int, turretsLost: Int, unrealKills: Int, visionScore: Int, visionWardsBoughtInGame: Int, wardsKilled: Int, wardsPlaced: Int, win: Bool) {
+    public init(assists: Int, baronKills: Int, bountyLevel: Int, challenges: Challenges, champExperience: Int, champLevel: Int, championId: ChampionId, championName: String, championTransform: Int, consumablesPurchased: Int, damageDealtToBuildings: Int, damageDealtToObjectives: Int, damageDealtToTurrets: Int, damageSelfMitigated: Int, deaths: Int, detectorWardsPlaced: Int, doubleKills: Int, dragonKills: Int, eligibleForProgression: Bool, firstBloodAssist: Bool, firstBloodKill: Bool, firstTowerAssist: Bool, firstTowerKill: Bool, gameEndedInEarlySurrender: Bool, gameEndedInSurrender: Bool, goldEarned: Int, goldSpent: Int, individualPosition: String, inhibitorKills: Int, inhibitorTakedowns: Int, inhibitorsLost: Int, item0: ItemId, item1: ItemId, item2: ItemId, item3: ItemId, item4: ItemId, item5: ItemId, item6: ItemId, itemsPurchased: Int, killingSprees: Int, kills: Int, lane: String, largestCriticalStrike: Int, largestKillingSpree: Int, largestMultiKill: Int, longestTimeSpentLiving: Int, magicDamageDealt: Int, magicDamageDealtToChampions: Int, magicDamageTaken: Int, neutralMinionsKilled: Int, nexusKills: Int, nexusLost: Int, nexusTakedowns: Int, objectivesStolen: Int, objectivesStolenAssists: Int, participantId: Int, pentaKills: Int, perks: MatchPerks, physicalDamageDealt: Int, physicalDamageDealtToChampions: Int, physicalDamageTaken: Int, profileIcon: ProfileIconId, puuid: SummonerPuuid, quadraKills: Int, riotIdName: String, riotIdTagline: String, role: String, sightWardsBoughtInGame: Int, spell1Casts: Int, spell2Casts: Int, spell3Casts: Int, spell4Casts: Int, summoner1Casts: Int, summoner1Id: SummonerSpellId, summoner2Casts: Int, summoner2Id: SummonerSpellId, summonerId: SummonerId, summonerLevel: Int, summonerName: String, teamEarlySurrendered: Bool, teamId: LOLTeamId, teamPosition: String, timeCCingOthers: Int, timePlayed: Int, totalDamageDealt: Int, totalDamageDealtToChampions: Int, totalDamageShieldedOnTeammates: Int, totalDamageTaken: Int, totalHeal: Int, totalHealsOnTeammates: Int, totalMinionsKilled: Int, totalTimeCcDealt: Int, totalTimeSpentDead: Int, totalUnitsHealed: Int, tripleKills: Int, trueDamageDealt: Int, trueDamageDealtToChampions: Int, trueDamageTaken: Int, turretKills: Int, turretTakedowns: Int, turretsLost: Int, unrealKills: Int, visionScore: Int, visionWardsBoughtInGame: Int, wardsKilled: Int, wardsPlaced: Int, win: Bool) {
         self.assists = assists
         self.baronKills = baronKills
         self.bountyLevel = bountyLevel
@@ -339,10 +339,10 @@ public class MatchParticipant: Decodable { // Used by Match v5
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.assists = try container.decode(Int.self, forKey: .participantId)
+        self.assists = try container.decode(Int.self, forKey: .assists)
         self.baronKills = try container.decode(Int.self, forKey: .baronKills)
         self.bountyLevel = try container.decode(Int.self, forKey: .bountyLevel)
-        self.challenges = try container.decode([Challenges].self, forKey: .challenges)
+        self.challenges = try container.decode(Challenges.self, forKey: .challenges)
         self.champExperience = try container.decode(Int.self, forKey: .champExperience)
         self.champLevel = try container.decode(Int.self, forKey: .champLevel)
         self.championId = try ChampionId(container.decode(Long.self, forKey: .championId))
@@ -400,7 +400,7 @@ public class MatchParticipant: Decodable { // Used by Match v5
         self.physicalDamageDealt = try container.decode(Int.self, forKey: .physicalDamageDealt)
         self.physicalDamageDealtToChampions = try container.decode(Int.self, forKey: .physicalDamageDealtToChampions)
         self.physicalDamageTaken = try container.decode(Int.self, forKey: .physicalDamageTaken)
-        self.profileIcon = try container.decode(Int.self, forKey: .profileIcon)
+        self.profileIcon = try ProfileIconId(container.decode(Int.self, forKey: .profileIcon))
         self.puuid = try SummonerPuuid(container.decode(String.self, forKey: .puuid))
         self.quadraKills = try container.decode(Int.self, forKey: .quadraKills)
         self.riotIdName = try container.decode(String.self, forKey: .riotIdName)
@@ -415,11 +415,11 @@ public class MatchParticipant: Decodable { // Used by Match v5
         self.summoner1Id = try SummonerSpellId(container.decode(Long.self, forKey: .summoner1Id))
         self.summoner2Casts = try container.decode(Int.self, forKey: .summoner2Casts)
         self.summoner2Id = try SummonerSpellId(container.decode(Long.self, forKey: .summoner2Id))
-        self.summonerId = try container.decode(String.self, forKey: .summonerId)
+        self.summonerId = try SummonerId(container.decode(String.self, forKey: .summonerId))
         self.summonerLevel = try container.decode(Int.self, forKey: .summonerLevel)
         self.summonerName = try container.decode(String.self, forKey: .summonerName)
-        self.teamEarlySurrendered = ((try container.decode(Int.self, forKey: .teamEarlySurrendered)) != 0)
-        self.teamId = try container.decode(Int.self, forKey: .teamId)
+        self.teamEarlySurrendered = ((try container.decode(Bool.self, forKey: .teamEarlySurrendered)) != false)
+        self.teamId = try LOLTeamId(container.decode(Int.self, forKey: .teamId))
         self.teamPosition = try container.decode(String.self, forKey: .teamPosition)
         self.timeCCingOthers = try container.decode(Int.self, forKey: .timeCCingOthers)
         self.timePlayed = try container.decode(Int.self, forKey: .timePlayed)

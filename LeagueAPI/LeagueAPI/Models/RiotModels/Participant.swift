@@ -50,7 +50,7 @@ public class Participant: Decodable { // Used by Spectator v4 - CurrentGameParti
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.summonerName = try container.decode(String.self, forKey: .summonerName)
-        self.profileIconId = try ProfileIconId(container.decode(Long.self, forKey: .profileIconId))
+        self.profileIconId = try ProfileIconId(container.decode(Int.self, forKey: .profileIconId))
         self.championId = try ChampionId(container.decode(Long.self, forKey: .championId))
         self.isBot = try container.decode(Bool.self, forKey: .isBot)
         self.teamId = try container.decode(Long.self, forKey: .teamId)
