@@ -9,6 +9,36 @@
 import Foundation
 
 public class LoLAPI: APIClient {
+
+    // MARK: - Challenges V1
+    public func getAllChallengesConfig(on region: Region, handler: @escaping([ChallengeConfigInfo]?, String?) -> Void) {
+        ChallengeBusiness.getChallenge(method: .AllConfig, region: region, key: self.key, handler: handler)
+    }
+    // Return value: Map[Long, Map[Integer, Map[Level, Double]]]
+    public func getAllChallengesPercentiles(on region: Region, handler: @escaping([ChallengeIdString: Thresholds]?, String?) -> Void) {
+        ChallengeBusiness.getChallenge(method: .AllPercentiles, region: region, key: self.key, handler: handler)
+    }
+    public func getChallengeConfig(by challengeId: ChallengeId, on region: Region, handler: @escaping(ChallengeConfigInfo?, String?) -> Void) {
+        ChallengeBusiness.getChallenge(method: .ByChallengeId(id: challengeId), region: region, key: self.key, handler: handler)
+    }
+    public func getChallengeLeaderboard(by challengeId: ChallengeId, for level: Level, limit: Int? = nil, on region: Region, handler: @escaping([ApexPlayerInfo]?, String?) -> Void) {
+        ChallengeBusiness.getChallenge(method: .ByChallengeIdAndLevel(id: challengeId, level: level, limit: limit), region: region, key: self.key, handler: handler)
+        
+    }
+    public func getChallengePercentiles(by challengeId: ChallengeId, on region: Region, handler: @escaping(Thresholds?, String?) -> Void) {
+        ChallengeBusiness.getChallenge(method: .PercentilesByChallengeId(id: challengeId), region: region, key: self.key, handler: handler)
+        
+    }
+    public func getChallengePlayerInfo(by puuid: SummonerPuuid, on region: Region, handler: @escaping(PlayerInfo?, String?) -> Void) {
+        ChallengeBusiness.getChallenge(method: .BySummonerId(id: puuid), region: region, key: self.key, handler: handler)
+    }
+    
+    
+    
+    
+    
+    
+    
     
     // MARK: - Champion Mastery
     
