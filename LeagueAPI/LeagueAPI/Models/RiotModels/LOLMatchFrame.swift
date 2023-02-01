@@ -24,4 +24,11 @@ public class LOLMatchFrame: Codable {
         self.participantFrames = participantFrames
         self.timestamp = timestamp
     }
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.events = try container.decode([LOLMatchEvent].self, forKey: .events)
+        self.participantFrames = try container.decode(Dictionary.self, forKey: .participantFrames)
+        self.timestamp = try container.decode(Int.self, forKey: .timestamp)
+    }
 }

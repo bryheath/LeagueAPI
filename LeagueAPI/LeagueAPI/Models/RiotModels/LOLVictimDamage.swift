@@ -31,7 +31,7 @@ public class LOLVictimDamage: Codable {
         case type = "type"
     }
 
-    public init(basic: Bool, magicDamage: Int, name: String, participantId: Int, physicalDamage: Int, spellName: String, spellSlot: Int, trueDamage: Int, type: LOLVictimDamageDealtType) {
+    public init(basic: Bool, magicDamage: Int, name: String?, participantId: Int, physicalDamage: Int, spellName: String, spellSlot: Int, trueDamage: Int, type: LOLVictimDamageDealtType) {
         self.basic = basic
         self.magicDamage = magicDamage
         self.name = name
@@ -41,5 +41,18 @@ public class LOLVictimDamage: Codable {
         self.spellSlot = spellSlot
         self.trueDamage = trueDamage
         self.type = type
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.basic = try container.decode(Bool.self, forKey: .basic)
+        self.magicDamage = try container.decode(Int.self, forKey: .magicDamage)
+        self.name = try? container.decode(String.self, forKey: .name)
+        self.participantId = try container.decode(Int.self, forKey: .participantId)
+        self.physicalDamage = try container.decode(Int.self, forKey: .physicalDamage)
+        self.spellName = try container.decode(String.self, forKey: .spellName)
+        self.spellSlot = try container.decode(Int.self, forKey: .spellSlot)
+        self.trueDamage = try container.decode(Int.self, forKey: .trueDamage)
+        self.type = try container.decode(LOLVictimDamageDealtType.self, forKey: .type)
     }
 }

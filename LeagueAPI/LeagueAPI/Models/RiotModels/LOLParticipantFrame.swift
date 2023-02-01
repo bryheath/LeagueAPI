@@ -51,4 +51,20 @@ public class LOLParticipantFrame: Codable {
         self.totalGold = totalGold
         self.xp = xp
     }
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.championStats = try container.decode(Dictionary.self, forKey: .championStats)
+        self.currentGold = try container.decode(Int.self, forKey: .currentGold)
+        self.damageStats = try container.decode(Dictionary.self, forKey: .damageStats)
+        self.goldPerSecond = try container.decode(Int.self, forKey: .goldPerSecond)
+        self.jungleMinionsKilled = try container.decode(Int.self, forKey: .jungleMinionsKilled)
+        self.level = try container.decode(Int.self, forKey: .level)
+        self.minionsKilled = try container.decode(Int.self, forKey: .minionsKilled)
+        self.participantId = try container.decode(Int.self, forKey: .participantId)
+        self.position = try container.decode(LOLPosition.self, forKey: .position)
+        self.timeEnemySpentControlled = try container.decode(Int.self, forKey: .timeEnemySpentControlled)
+        self.totalGold = try container.decode(Int.self, forKey: .totalGold)
+        self.xp = try container.decode(Int.self, forKey: .xp)
+    }
 }

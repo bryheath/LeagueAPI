@@ -1447,10 +1447,6 @@
 		BE6E97CE298A20EA00857A34 /* LOLMatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97CC298A20EA00857A34 /* LOLMatchEvent.swift */; };
 		BE6E97CF298A20EA00857A34 /* LOLMatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97CC298A20EA00857A34 /* LOLMatchEvent.swift */; };
 		BE6E97D0298A20EA00857A34 /* LOLMatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97CC298A20EA00857A34 /* LOLMatchEvent.swift */; };
-		BE6E97D2298A21EE00857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97D1298A21EE00857A34 /* LOLEventType.swift */; };
-		BE6E97D3298A21EE00857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97D1298A21EE00857A34 /* LOLEventType.swift */; };
-		BE6E97D4298A21EE00857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97D1298A21EE00857A34 /* LOLEventType.swift */; };
-		BE6E97D5298A21EE00857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97D1298A21EE00857A34 /* LOLEventType.swift */; };
 		BE6E97D7298A229200857A34 /* LOLBuildingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97D6298A229200857A34 /* LOLBuildingType.swift */; };
 		BE6E97D8298A229200857A34 /* LOLBuildingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97D6298A229200857A34 /* LOLBuildingType.swift */; };
 		BE6E97D9298A229200857A34 /* LOLBuildingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97D6298A229200857A34 /* LOLBuildingType.swift */; };
@@ -1479,6 +1475,10 @@
 		BE6E97F6298A23C400857A34 /* LOLParticipantFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97F4298A23C400857A34 /* LOLParticipantFrame.swift */; };
 		BE6E97F7298A23C400857A34 /* LOLParticipantFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97F4298A23C400857A34 /* LOLParticipantFrame.swift */; };
 		BE6E97F8298A23C400857A34 /* LOLParticipantFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97F4298A23C400857A34 /* LOLParticipantFrame.swift */; };
+		BE6E97FA298A28E700857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97F9298A28E700857A34 /* LOLEventType.swift */; };
+		BE6E97FB298A28E700857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97F9298A28E700857A34 /* LOLEventType.swift */; };
+		BE6E97FC298A28E700857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97F9298A28E700857A34 /* LOLEventType.swift */; };
+		BE6E97FD298A28E700857A34 /* LOLEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E97F9298A28E700857A34 /* LOLEventType.swift */; };
 		BEA9864C296F95EC00F2D7A6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9864B296F95EC00F2D7A6 /* State.swift */; };
 		BEA9864D296F95EC00F2D7A6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9864B296F95EC00F2D7A6 /* State.swift */; };
 		BEA9864E296F95EC00F2D7A6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9864B296F95EC00F2D7A6 /* State.swift */; };
@@ -2289,7 +2289,6 @@
 		BE6E97C2298A1FFB00857A34 /* LOLWardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLWardType.swift; sourceTree = "<group>"; };
 		BE6E97C7298A204100857A34 /* LOLMatchFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLMatchFrame.swift; sourceTree = "<group>"; };
 		BE6E97CC298A20EA00857A34 /* LOLMatchEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLMatchEvent.swift; sourceTree = "<group>"; };
-		BE6E97D1298A21EE00857A34 /* LOLEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLEventType.swift; sourceTree = "<group>"; };
 		BE6E97D6298A229200857A34 /* LOLBuildingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLBuildingType.swift; sourceTree = "<group>"; };
 		BE6E97DB298A22AB00857A34 /* LOLLaneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLLaneType.swift; sourceTree = "<group>"; };
 		BE6E97E0298A22CC00857A34 /* LOLLevelUpType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLLevelUpType.swift; sourceTree = "<group>"; };
@@ -2297,6 +2296,7 @@
 		BE6E97EA298A235400857A34 /* LOLVictimDamage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLVictimDamage.swift; sourceTree = "<group>"; };
 		BE6E97EF298A238D00857A34 /* LOLVictimDamageDealtType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLVictimDamageDealtType.swift; sourceTree = "<group>"; };
 		BE6E97F4298A23C400857A34 /* LOLParticipantFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLParticipantFrame.swift; sourceTree = "<group>"; };
+		BE6E97F9298A28E700857A34 /* LOLEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLEventType.swift; sourceTree = "<group>"; };
 		BE873D7128D8195200F8EADF /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = "../../../../Library/Developer/Xcode/DerivedData/LeagueAPI-cslxuzpqkstzmqbwfvxsmlcldfxh/Build/Products/Release-iphoneos/LeagueAPI.framework"; sourceTree = "<group>"; };
 		BE8BB6872851821A00753CB0 /* LeagueAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeagueAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8BB6882851821A00753CB0 /* LeagueAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeagueAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3125,7 +3125,6 @@
 				BE6E97BD298A1C7700857A34 /* LOLTimelineParticipant.swift */,
 				BE6E97C7298A204100857A34 /* LOLMatchFrame.swift */,
 				BE6E97CC298A20EA00857A34 /* LOLMatchEvent.swift */,
-				BE6E97D1298A21EE00857A34 /* LOLEventType.swift */,
 				BE6E97E5298A231100857A34 /* LOLPosition.swift */,
 				BE6E97EA298A235400857A34 /* LOLVictimDamage.swift */,
 				BE6E97F4298A23C400857A34 /* LOLParticipantFrame.swift */,
@@ -3171,6 +3170,7 @@
 				BE6E97DB298A22AB00857A34 /* LOLLaneType.swift */,
 				BE6E97E0298A22CC00857A34 /* LOLLevelUpType.swift */,
 				BE6E97EF298A238D00857A34 /* LOLVictimDamageDealtType.swift */,
+				BE6E97F9298A28E700857A34 /* LOLEventType.swift */,
 			);
 			path = RiotEnums;
 			sourceTree = "<group>";
@@ -4279,6 +4279,7 @@
 				BECFEEB72850002500E61E37 /* ClashTournamentPhase.swift in Sources */,
 				970436B3228504D00073F296 /* DDragonVersions.swift in Sources */,
 				971EB67024CC694600C4C6CC /* TFTChampionId.swift in Sources */,
+				BE6E97FB298A28E700857A34 /* LOLEventType.swift in Sources */,
 				9704371C228504F30073F296 /* Logger.swift in Sources */,
 				BE6E97CE298A20EA00857A34 /* LOLMatchEvent.swift in Sources */,
 				BE6E97EC298A235400857A34 /* LOLVictimDamage.swift in Sources */,
@@ -4326,7 +4327,6 @@
 				9724E72824C5A4F200062EE5 /* LoLAPI.swift in Sources */,
 				970436FA228504E80073F296 /* ItemId.swift in Sources */,
 				9704360A228504970073F296 /* APIBusiness.swift in Sources */,
-				BE6E97D3298A21EE00857A34 /* LOLEventType.swift in Sources */,
 				BECFEDF32850002400E61E37 /* TFTParticipant.swift in Sources */,
 				BECFEDC32850002400E61E37 /* TFTLadderTier.swift in Sources */,
 				9766364225AC5D73009E56AA /* RunneteraStatusMethod.swift in Sources */,
@@ -4572,6 +4572,7 @@
 				BECFEEB82850002500E61E37 /* ClashTournamentPhase.swift in Sources */,
 				970436D0228504D10073F296 /* DDragonVersions.swift in Sources */,
 				971EB67124CC694600C4C6CC /* TFTChampionId.swift in Sources */,
+				BE6E97FC298A28E700857A34 /* LOLEventType.swift in Sources */,
 				97043728228504F40073F296 /* Logger.swift in Sources */,
 				BE6E97CF298A20EA00857A34 /* LOLMatchEvent.swift in Sources */,
 				BE6E97ED298A235400857A34 /* LOLVictimDamage.swift in Sources */,
@@ -4619,7 +4620,6 @@
 				9724E72924C5A4F200062EE5 /* LoLAPI.swift in Sources */,
 				9704370B228504E80073F296 /* ItemId.swift in Sources */,
 				970435FF228504960073F296 /* APIBusiness.swift in Sources */,
-				BE6E97D4298A21EE00857A34 /* LOLEventType.swift in Sources */,
 				BECFEDF42850002400E61E37 /* TFTParticipant.swift in Sources */,
 				BECFEDC42850002400E61E37 /* TFTLadderTier.swift in Sources */,
 				9766364325AC5D73009E56AA /* RunneteraStatusMethod.swift in Sources */,
@@ -4865,6 +4865,7 @@
 				974D8B3D2373ED3B00149B3E /* TFTLeagueId.swift in Sources */,
 				97043819228505F90073F296 /* LeagueId.swift in Sources */,
 				97043813228505F90073F296 /* SummonerSpellId.swift in Sources */,
+				BE6E97FD298A28E700857A34 /* LOLEventType.swift in Sources */,
 				BECFED592850002300E61E37 /* ClashTournament.swift in Sources */,
 				BE6E97D0298A20EA00857A34 /* LOLMatchEvent.swift in Sources */,
 				BE6E97EE298A235400857A34 /* LOLVictimDamage.swift in Sources */,
@@ -4912,7 +4913,6 @@
 				97043822228506030073F296 /* Logger.swift in Sources */,
 				9766364425AC5D73009E56AA /* RunneteraStatusMethod.swift in Sources */,
 				BECFEDF52850002400E61E37 /* TFTParticipant.swift in Sources */,
-				BE6E97D5298A21EE00857A34 /* LOLEventType.swift in Sources */,
 				BECFEDC52850002400E61E37 /* TFTLadderTier.swift in Sources */,
 				97043789228505B60073F296 /* DataDragonChampionBusiness.swift in Sources */,
 				97043805228505EC0073F296 /* ItemShop.swift in Sources */,
@@ -5158,6 +5158,7 @@
 				97CAE0FA26639AD600F449F0 /* RunneteraIventoryBusiness.swift in Sources */,
 				974D8B3A2373ED3B00149B3E /* TFTLeagueId.swift in Sources */,
 				978AC5BB212F515B00C5CCCD /* ProfileIconId.swift in Sources */,
+				BE6E97FA298A28E700857A34 /* LOLEventType.swift in Sources */,
 				BECFED562850002300E61E37 /* ClashTournament.swift in Sources */,
 				BE6E97CD298A20EA00857A34 /* LOLMatchEvent.swift in Sources */,
 				BE6E97EB298A235400857A34 /* LOLVictimDamage.swift in Sources */,
@@ -5205,7 +5206,6 @@
 				BECFED8E2850002300E61E37 /* Place.swift in Sources */,
 				97A5608C2123572600A908CD /* DataDragonRequester.swift in Sources */,
 				97D38D3F210A7B0B00150CF9 /* ServiceProxy.swift in Sources */,
-				BE6E97D2298A21EE00857A34 /* LOLEventType.swift in Sources */,
 				BECFEDF22850002400E61E37 /* TFTParticipant.swift in Sources */,
 				BECFEDC22850002400E61E37 /* TFTLadderTier.swift in Sources */,
 				978AC6372132AE9500C5CCCD /* RateLimitManager.swift in Sources */,
