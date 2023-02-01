@@ -31,6 +31,14 @@ public class CategoryPoints: Codable, CustomDebugStringConvertible {
         self.collection = collection
         self.expertise = expertise
     }
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.veterancy = try container.decode(ChallengePoints.self, forKey: .veterancy)
+        self.teamwork = try container.decode(ChallengePoints.self, forKey: .teamwork)
+        self.imagination = try container.decode(ChallengePoints.self, forKey: .imagination)
+        self.collection = try container.decode(ChallengePoints.self, forKey: .collection)
+        self.expertise = try container.decode(ChallengePoints.self, forKey: .expertise)
+    }
     
     public var debugDescription: String {
         "veterancy:\n\(self.veterancy)\nteamwork:\n\(self.teamwork)\nimagination:\n\(self.imagination)\ncollection:\n\(self.collection)\nexpertise:\n\(self.expertise)\n"

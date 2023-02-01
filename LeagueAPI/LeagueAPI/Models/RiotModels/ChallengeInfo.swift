@@ -37,6 +37,17 @@ public class ChallengeInfo: Codable, CustomDebugStringConvertible {
         self.playersInLevel = playersInLevel
     }
     
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.challengeId = try container.decode(Int.self, forKey: .challengeId)
+        self.percentile = try container.decode(Double.self, forKey: .percentile)
+        self.level = try container.decode(Level.self, forKey: .level)
+        self.value = try container.decode(Int.self, forKey: .value)
+        self.achievedTime = try? container.decode(Int.self, forKey: .achievedTime)
+        self.position = try? container.decode(Int.self, forKey: .position)
+        self.playersInLevel = try? container.decode(Int.self, forKey: .playersInLevel)
+    }
+    
     public var debugDescription: String {
         "challengeId: \(self.challengeId), percentile: \(self.percentile), level: \(self.level.rawValue), value: \(self.value), achievedTime: \(String(describing: self.achievedTime)), position: \(String(describing: self.position)), playersInLevel: \(String(describing: self.playersInLevel))\n"
     }

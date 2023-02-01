@@ -25,6 +25,13 @@ public class ApexPlayerInfo: Codable, CustomDebugStringConvertible {
         self.puuid = puuid
         self.value = value
     }
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.position = try container.decode(Int.self, forKey: .position)
+        self.puuid = try container.decode(String.self, forKey: .puuid)
+        self.value = try container.decode(Int.self, forKey: .value)
+    }
+    
     public var debugDescription: String {
         "position: \(self.position)\npuuid: \(self.puuid)\nvalue: \(self.value)\n"
     }

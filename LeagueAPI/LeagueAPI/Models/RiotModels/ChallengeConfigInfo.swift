@@ -44,6 +44,19 @@ public class ChallengeConfigInfo: Codable, CustomDebugStringConvertible {
         self.endTimestamp = endTimestamp
     }
     
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.localizedNames = try container.decode(Dictionary.self, forKey: .localizedNames)
+        self.state = try container.decode(State.self, forKey: .state)
+        self.leaderboard = try container.decode(Bool.self, forKey: .leaderboard)
+        self.thresholds = try container.decode(Thresholds.self, forKey: .thresholds)
+        self.tracking = try? container.decode(Tracking.self, forKey: .tracking)
+        self.startTimeStamp = try? container.decode(Int.self, forKey: .startTimeStamp)
+        self.endTimestamp = try? container.decode(Int.self, forKey: .endTimestamp)
+    }
+    
+    
     public var debugDescription: String {
         "id: \(self.id)\nlocalizedNames: \n\(self.localizedNames)\nstate: \(self.state)\nleaderboard: \(self.leaderboard)\nthresholds: \n\(self.thresholds)\n"
     }

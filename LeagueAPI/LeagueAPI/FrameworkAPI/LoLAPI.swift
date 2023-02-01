@@ -33,13 +33,6 @@ public class LoLAPI: APIClient {
         ChallengeBusiness.getChallenge(method: .BySummonerId(id: puuid), region: region, key: self.key, handler: handler)
     }
     
-    
-    
-    
-    
-    
-    
-    
     // MARK: - Champion Mastery
     
     public func getChampionMasteries(by summonerId: SummonerId, on region: Region, handler: @escaping ([ChampionMastery]?, String?) -> Void) {
@@ -129,13 +122,6 @@ public class LoLAPI: APIClient {
     public func getMatch(by matchId: LOLMatchId, on region: Region, handler: @escaping (Match?, String?) -> Void) {
         MatchBusiness.getMatch(method: .ById(id: matchId), region: region, key: self.key, handler: handler)
     }
-//    public func getMatch(by gameId: GameId, on region: Region, handler: @escaping (Match?, String?) -> Void) {
-//        MatchBusiness.getMatch(method: .ById(id: gameId), region: region, key: self.key, handler: handler)
-//    }
-    
-//    public func getMatchList(by puuid: SummonerPuuid, on region: Region, beginTime: Datetime? = nil, endTime: Datetime? = nil, beginIndex: Int? = nil, endIndex: Int? = nil, championId: ChampionId? = nil, queue: QueueMode? = nil, season: Season? = nil, handler: @escaping (MatchList?, String?) -> Void) {
-//        MatchBusiness.getMatch(method: .MatchesByAccountId(id: puuid, beginTime: beginTime, endTime: endTime, beginIndex: beginIndex, endIndex: endIndex, championId: championId, queue: queue, season: season), region: region, key: self.key, handler: handler)
-//    }
     
     public func getMatchList(by puuid: SummonerPuuid, on region: Region, startTime: Datetime? = nil, endTime: Datetime? = nil, queue: QueueMode? = nil, type: GameType? = nil, start: Int? = nil, count: Int? = nil, handler: @escaping (MatchList?, String?) -> Void) {
         MatchBusiness.getMatch(method: .MatchesByAccountId(id: puuid, startTime: startTime, endTime: endTime, queue: queue, type: type, start: start, count: count), region: region, key: self.key, handler: handler)

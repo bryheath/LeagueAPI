@@ -11,23 +11,6 @@ import Foundation
 internal class ChallengeMethod: LeagueMethod {
 
     public enum ChallengeMethods: CustomStringConvertible {
-//        case BySummonerId(id: SummonerId)
-//        case BySummonerIdAndChampionId(summonerId: SummonerId, championId: ChampionId)
-//        case ScoreBySummonerId(id: SummonerId)
-//
-//        public var description: String {
-//            var methodDescription: String {
-//                switch self {
-//                case .BySummonerId:
-//                    return "BySummonerId"
-//                case .BySummonerIdAndChampionId:
-//                    return "BySummonerIdAndChampionId"
-//                case .ScoreBySummonerId:
-//                    return "ScoreBySummonerId"
-//                }
-//            }
-//            return "\(String(describing: ChampionMasteryMethods.self))-\(methodDescription)"
-//        }
         case AllConfig
         case AllPercentiles
         case ByChallengeId(id: ChallengeId)

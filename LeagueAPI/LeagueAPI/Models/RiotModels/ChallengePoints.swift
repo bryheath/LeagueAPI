@@ -28,6 +28,14 @@ public class ChallengePoints: Codable, CustomDebugStringConvertible {
         self.percentile = percentile
     }
     
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.level = try container.decode(Level.self, forKey: .level)
+        self.current = try container.decode(Int.self, forKey: .current)
+        self.max = try container.decode(Int.self, forKey: .max)
+        self.percentile = try container.decode(Double.self, forKey: .percentile)
+    }
+    
     public var debugDescription: String {
         "level: \(self.level), current: \(self.current), max: \(self.max), percentile: \(self.percentile)"
     }
