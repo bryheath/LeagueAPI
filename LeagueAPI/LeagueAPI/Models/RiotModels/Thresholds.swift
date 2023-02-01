@@ -7,7 +7,7 @@ import Foundation
 
 
 // MARK: - Thresholds
-public class Thresholds: Codable {
+public class Thresholds: Codable, CustomDebugStringConvertible {
     public var challenger: Double?
     public var silver: Double?
     public var platinum: Double?
@@ -43,5 +43,8 @@ public class Thresholds: Codable {
         self.diamond = diamond
         self.bronze = bronze
         self.grandmaster = grandmaster
+    }
+    public var debugDescription: String {
+         "none: \(self.none ?? -1)\n iron: \(self.iron ?? -1)\n bronze: \(self.bronze ?? -1)\n silver: \(self.silver ?? -1)\n gold: \(self.gold ?? -1)\n platnium: \(self.platinum ?? -1)\n diamond: \(self.diamond ?? -1)\n master: \(self.master ?? -1)\n grandmaster: \(self.grandmaster ?? -1)\n challenger: \(self.challenger ?? -1)\n"
     }
 }

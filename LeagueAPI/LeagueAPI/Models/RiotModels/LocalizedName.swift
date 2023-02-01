@@ -6,10 +6,10 @@
 import Foundation
 
 // MARK: - LocalizedName
-public class LocalizedName: Codable {
-    public var description: String?
-    public var name: String?
-    public var shortDescription: String?
+public class LocalizedName: Codable, CustomDebugStringConvertible {
+    public var description: String
+    public var name: String
+    public var shortDescription: String
 
     enum CodingKeys: String, CodingKey {
         case description = "description"
@@ -17,9 +17,12 @@ public class LocalizedName: Codable {
         case shortDescription = "shortDescription"
     }
 
-    public init(description: String?, name: String?, shortDescription: String?) {
+    public init(description: String, name: String, shortDescription: String) {
         self.description = description
         self.name = name
         self.shortDescription = shortDescription
+    }
+    public var debugDescription: String {
+        "name: \(self.name)\nshortDescription: \(self.shortDescription)\ndescription: \(self.description)\n"
     }
 }

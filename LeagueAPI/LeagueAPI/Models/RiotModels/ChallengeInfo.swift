@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class ChallengeInfo: Codable {
-    public var challengeId: Int?
-    public var percentile: Double?
-    public var level: Level?
-    public var value: Int?
+public class ChallengeInfo: Codable, CustomDebugStringConvertible {
+    public var challengeId: Int
+    public var percentile: Double
+    public var level: Level
+    public var value: Int
     public var achievedTime: Int?
     public var position: Int?
     public var playersInLevel: Int?
@@ -27,7 +27,7 @@ public class ChallengeInfo: Codable {
         case playersInLevel = "playersInLevel"
     }
 
-    public init(challengeId: Int?, percentile: Double?, level: Level?, value: Int?, achievedTime: Int?, position: Int?, playersInLevel: Int?) {
+    public init(challengeId: Int, percentile: Double, level: Level, value: Int, achievedTime: Int?, position: Int?, playersInLevel: Int?) {
         self.challengeId = challengeId
         self.percentile = percentile
         self.level = level
@@ -35,5 +35,9 @@ public class ChallengeInfo: Codable {
         self.achievedTime = achievedTime
         self.position = position
         self.playersInLevel = playersInLevel
+    }
+    
+    public var debugDescription: String {
+        "challengeId: \(self.challengeId), percentile: \(self.percentile), level: \(self.level.rawValue), value: \(self.value), achievedTime: \(String(describing: self.achievedTime)), position: \(String(describing: self.position)), playersInLevel: \(String(describing: self.playersInLevel))\n"
     }
 }

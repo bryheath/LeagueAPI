@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class PlayerClientPreferences: Codable {
-    public var bannerAccent: String?
-    public var title: String?
-    public var challengeIds: [Int]?
+public class PlayerClientPreferences: Codable, CustomDebugStringConvertible {
+    public var bannerAccent: String
+    public var title: String
+    public var challengeIds: [Int]
 
     enum CodingKeys: String, CodingKey {
         case bannerAccent = "bannerAccent"
@@ -19,9 +19,12 @@ public class PlayerClientPreferences: Codable {
         case challengeIds = "challengeIds"
     }
 
-    public init(bannerAccent: String?, title: String?, challengeIds: [Int]?) {
+    public init(bannerAccent: String, title: String, challengeIds: [Int]) {
         self.bannerAccent = bannerAccent
         self.title = title
         self.challengeIds = challengeIds
+    }
+    public var debugDescription: String {
+        "bannerAccent: \(String(describing: bannerAccent)), title: \(String(describing: title)), challengeIds: \(String(describing: challengeIds))"
     }
 }

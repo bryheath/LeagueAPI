@@ -87,9 +87,9 @@ internal class ChallengeMethod: LeagueMethod {
             return "\(commonPath)/challenges/\(id)/config"
         case .ByChallengeIdAndLevel(let id, let level, let limit):
             if let limit = limit {
-                return "\(commonPath)/challenges/\(id)/leaderboards/by-level/\(level)?limit=\(limit)"
+                return "\(commonPath)/challenges/\(id)/leaderboards/by-level/\(level.rawValue)?limit=\(limit)"
             } else {
-                return "\(commonPath)/challenges/\(id)/leaderboards/by-level/\(level)"
+                return "\(commonPath)/challenges/\(id)/leaderboards/by-level/\(level.rawValue)"
             }
         case .PercentilesByChallengeId(let id):
             return "\(commonPath)/challenges/\(id)/percentiles"
