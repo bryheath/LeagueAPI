@@ -90,7 +90,7 @@ public class Map {
         self.note = note
     }
     
-    internal convenience init(_ id: Long) {
+    public convenience init(_ id: Long) {
         switch id {
         case Maps.SummerSummonersRift.rawValue:
             self.init(map: .SummerSummonersRift, place: .SummonersRift, note: "Original Summer variant")
