@@ -58,10 +58,10 @@ If none of these helped you, open an issue describing your problem and I'll try 
 
 ### 📦 Minimum versions 📦
 
-📱 iOS 9.0  
-⌚ WatchOS 2.0  
-📺 TvOS 9.0  
-💻 MacOS 10.9 (Mavericks)  
+📱 iOS 13.0  
+⌚ WatchOS 6.0  
+📺 TvOS 13.0  
+💻 MacOS 10.14 (Mojave)
 
 ### 🔑 Riot API Key 🔑
 
@@ -154,3 +154,4 @@ Antoine Clop ([Kelmatou](https://github.com/Kelmatou))
 Ronan Cendrier ([Hanoki](https://github.com/Hanoki))  
 Ammon Parry ([AmmonP](https://github.com/AmmonP))  
 Sandi Karajic ([SKarajic](https://github.com/SKarajic))
+Bryan Heath ([bryheath](https://github.com/bryheath))
