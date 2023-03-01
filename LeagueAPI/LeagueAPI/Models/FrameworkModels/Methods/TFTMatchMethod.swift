@@ -33,6 +33,7 @@ internal class TFTMatchMethod: LeagueMethod {
     public init(method: TFTMatchMethods, region: Region) {
         self.method = method
         self.service = ServiceProxy(for: region)
+        self.service.allowSouthEastAsiaWorldRegion = false
     }
     
     public func getAccessMethod() -> RESTRequester.AccessMethod {

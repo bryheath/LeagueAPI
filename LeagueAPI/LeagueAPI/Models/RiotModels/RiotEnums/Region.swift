@@ -21,4 +21,9 @@ public enum Region: String {
     case TR
     case RU
     case PBE
+    case PH // Philippines
+    case SG // Singapore
+    case TH // Thailand
+    case TW // Taiwan
+    case VN // Vietnam
 }

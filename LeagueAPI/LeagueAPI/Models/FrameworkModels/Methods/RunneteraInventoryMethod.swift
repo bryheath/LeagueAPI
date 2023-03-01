@@ -30,7 +30,8 @@ internal class RunneteraInventoryMethod: LeagueMethod {
     public init(method: RunneteraInventoryMethods, region: WorldRegion) {
         self.method = method
         self.service = ServiceProxy(for: region)
-        self.service.allowSouthEastAsiaWorldRegion = true
+//        self.service.allowSouthEastAsiaWorldRegion = true
+        self.service.allowAsiaWorldRegion = false
     }
     
     public func getAccessMethod() -> RESTRequester.AccessMethod {

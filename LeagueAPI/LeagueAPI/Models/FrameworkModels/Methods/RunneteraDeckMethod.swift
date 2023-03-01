@@ -33,7 +33,8 @@ internal class RunneteraDeckMethod: LeagueMethod {
     public init(method: RunneteraDeckMethods, region: WorldRegion) {
         self.method = method
         self.service = ServiceProxy(for: region)
-        self.service.allowSouthEastAsiaWorldRegion = true
+//        self.service.allowSouthEastAsiaWorldRegion = true
+        self.service.allowAsiaWorldRegion = false
     }
     
     public func getAccessMethod() -> RESTRequester.AccessMethod {

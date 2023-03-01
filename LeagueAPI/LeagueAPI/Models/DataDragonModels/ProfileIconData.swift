@@ -25,7 +25,13 @@ internal class ProfileIconData: Decodable {
         do {
             self.id = try ProfileIconId(Int(container.decode(Int.self, forKey: .id)))
         } catch {
-            print("ERRROOOOOOORRR")
+//            print("ERRROOOOOOORRR")
+            do {
+                self.id = try ProfileIconId(Int(container.decode(String.self, forKey: .id))!)
+                // Tecent Pack on SEA server uses Strings for profile icon ids (~25 icons)
+            } catch {
+                print("ERRROOOOOOORRR")
+            }
         }
     }
 }

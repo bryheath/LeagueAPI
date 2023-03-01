@@ -48,6 +48,7 @@ internal class TFTRankedMethod: LeagueMethod {
     public init(method: TFTRankedMethods, region: Region) {
         self.method = method
         self.service = ServiceProxy(for: region)
+        self.service.allowSouthEastAsiaWorldRegion = false
     }
     
     public func getAccessMethod() -> RESTRequester.AccessMethod {

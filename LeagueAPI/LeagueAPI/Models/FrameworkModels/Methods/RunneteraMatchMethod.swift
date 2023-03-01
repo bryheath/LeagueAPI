@@ -33,6 +33,7 @@ internal class RunneteraMatchMethod: LeagueMethod {
     public init(method: RunneteraMatchMethods, region: WorldRegion) {
         self.method = method
         self.service = ServiceProxy(for: region)
+        self.service.allowAsiaWorldRegion = false
     }
     
     public func getAccessMethod() -> RESTRequester.AccessMethod {

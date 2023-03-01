@@ -2929,30 +2929,30 @@
 		97D38D2D210A5B5700150CF9 /* Methods */ = {
 			isa = PBXGroup;
 			children = (
-				974D8AF02373BECC00149B3E /* TFTRankedMethod.swift */,
-				974D8AEE2373BECC00149B3E /* TFTMatchMethod.swift */,
-				974D8AEF2373BECC00149B3E /* TFTSummonerMethod.swift */,
-				97D38D2E210A5B7E00150CF9 /* LeagueMethod.swift */,
-				97D38D46210A80AA00150CF9 /* MethodPaths.swift */,
+				BEF4FD622980EA5800C7C494 /* ChallengeMethod.swift */,
 				97D38D7A210C5D8500150CF9 /* ChampionMasteryMethod.swift */,
 				97D38D80210C6BFB00150CF9 /* ChampionMethod.swift */,
+				97DF80F5242FFC2E0054C0E4 /* ClashMethod.swift */,
+				97D38D2E210A5B7E00150CF9 /* LeagueMethod.swift */,
+				97D38DDA210CF85D00150CF9 /* MatchMethod.swift */,
+				97D38D46210A80AA00150CF9 /* MethodPaths.swift */,
 				97DE803F2324ACDE00D50971 /* RankedExpMethod.swift */,
 				97D38D90210C85AC00150CF9 /* RankedMethod.swift */,
-				97D38D9E210CA2E800150CF9 /* StatusMethod.swift */,
-				97D38DDA210CF85D00150CF9 /* MatchMethod.swift */,
-				97D38DB4210CC12800150CF9 /* SpectatorMethod.swift */,
-				97D38D30210A5CDA00150CF9 /* SummonerMethod.swift */,
-				97D38DDE210D16C400150CF9 /* ThirdPartyCodeMethod.swift */,
-				97D38DE6210DFD9A00150CF9 /* TournamentStubMethod.swift */,
-				97E67E8921359B4800E8E1B7 /* TournamentMethod.swift */,
+				9724E72B24C5A8C200062EE5 /* RiotAccountMethod.swift */,
+				97CAE0FE26639BD100F449F0 /* RunneteraDeckMethod.swift */,
+				97CAE0F4266397CD00F449F0 /* RunneteraInventoryMethod.swift */,
 				972AEE1825ACF41600A77B55 /* RunneteraMatchMethod.swift */,
 				97DF80EB242F9AA30054C0E4 /* RunneteraRankedMethod.swift */,
 				9766364025AC5D73009E56AA /* RunneteraStatusMethod.swift */,
-				97CAE0F4266397CD00F449F0 /* RunneteraInventoryMethod.swift */,
-				97CAE0FE26639BD100F449F0 /* RunneteraDeckMethod.swift */,
-				97DF80F5242FFC2E0054C0E4 /* ClashMethod.swift */,
-				9724E72B24C5A8C200062EE5 /* RiotAccountMethod.swift */,
-				BEF4FD622980EA5800C7C494 /* ChallengeMethod.swift */,
+				97D38DB4210CC12800150CF9 /* SpectatorMethod.swift */,
+				97D38D9E210CA2E800150CF9 /* StatusMethod.swift */,
+				97D38D30210A5CDA00150CF9 /* SummonerMethod.swift */,
+				974D8AEE2373BECC00149B3E /* TFTMatchMethod.swift */,
+				974D8AF02373BECC00149B3E /* TFTRankedMethod.swift */,
+				974D8AEF2373BECC00149B3E /* TFTSummonerMethod.swift */,
+				97D38DDE210D16C400150CF9 /* ThirdPartyCodeMethod.swift */,
+				97E67E8921359B4800E8E1B7 /* TournamentMethod.swift */,
+				97D38DE6210DFD9A00150CF9 /* TournamentStubMethod.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -5546,16 +5546,18 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 13.0;
 				VALID_ARCHS = "i386 x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -5609,17 +5611,19 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 13.0;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "i386 x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};

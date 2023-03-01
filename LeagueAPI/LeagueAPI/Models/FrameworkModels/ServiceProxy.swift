@@ -14,11 +14,14 @@ internal class ServiceProxy {
     public private(set) var platforms: [Platform]
     private var host: Endpoint
 
-    // Only some services use SEA World Region
-    // OCE region was previously in Ameria but will probably fall to SEA in the future
-    // This variable is here so that new services can use SEA region with OCE
-    // Old services will still locate OCE in Ameria
-    public var allowSouthEastAsiaWorldRegion: Bool = false
+    // As of Feb 2023, most services can use SEA World Region
+    // ALL - OCE has moved to SEA
+    // TFT - No SEA Region at all for now
+    // LOR - KR and JP have moved to SEA
+    // These two variables handle these exceptions
+    // Riot is actively integrating these due to Garena closing
+    public var allowSouthEastAsiaWorldRegion: Bool = true
+    public var allowAsiaWorldRegion: Bool = true
     
     public var hostUrl: String {
         return self.host.rawValue
@@ -29,10 +32,16 @@ internal class ServiceProxy {
         case .NA, .BR, .LAN, .LAS, .PBE: // PBE is not officialy on America region
             return .America
         case .KR, .JP:
-            return .Asia
+            if self.allowAsiaWorldRegion {
+                return .Asia
+            } else {
+                return .SouthEastAsia
+            }
         case .EUNE, .EUW, .TR, .RU:
             return .Europe
         case .OCE:
+            return .SouthEastAsia
+        case .PH, .SG, .TH, .TW, .VN:
             if self.allowSouthEastAsiaWorldRegion {
                 return .SouthEastAsia
             } else {
@@ -92,7 +101,18 @@ internal class ServiceProxy {
             self.init(region: region, platforms: [.RU], host: .RU)
         case .TR:
             self.init(region: region, platforms: [.TR1], host: .TR)
+        case .PH:
+            self.init(region: region, platforms: [.PH2], host: .PH)
+        case .SG:
+            self.init(region: region, platforms: [.SG2], host: .SG)
+        case .TH:
+            self.init(region: region, platforms: [.TH2], host: .TH)
+        case .TW:
+            self.init(region: region, platforms: [.TW2], host: .TW)
+        case .VN:
+            self.init(region: region, platforms: [.VN2], host: .VN)
         }
+        
     }
     
     public convenience init(for worldRegion: WorldRegion) {
@@ -104,7 +124,7 @@ internal class ServiceProxy {
         case .Europe:
             self.init(for: .EUW)
         case .SouthEastAsia:
-            self.init(for: .OCE)
+            self.init(for: .VN)
         case .Esports:
             self.init(for: .KR) // there is no real mapping from WorldRegion.Esports to Region
         }

@@ -42,6 +42,7 @@ internal class TFTSummonerMethod: LeagueMethod {
     public init(method: TFTSummonerMethods, region: Region) {
         self.method = method
         self.service = ServiceProxy(for: region)
+        self.service.allowSouthEastAsiaWorldRegion = false
     }
     
     public func getAccessMethod() -> RESTRequester.AccessMethod {

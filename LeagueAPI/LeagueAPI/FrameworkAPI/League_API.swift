@@ -17,6 +17,7 @@ public class League_API { // Changed from LeagueAPI to avoid compiler errors in 
     
     private var apiKey: APIKey
     
+    
     public init(APIToken: String) {
         self.apiKey = APIKey(token: APIToken)
 

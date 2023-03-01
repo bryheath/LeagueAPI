@@ -27,6 +27,7 @@ internal class APIBusiness {
     }
     
     public func request<DataType: Decodable>(handler: @escaping (DataType?, String?) -> Void) {
+//        print("self.key: \(self.key.token)")
         let requester: LeagueRequester = LeagueRequester(key: self.key)
         requester.request(method: self.method) { (result, error) in
             handler(result, error)

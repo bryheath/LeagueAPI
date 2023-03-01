@@ -22,4 +22,9 @@ internal enum Platform: String {
     case TR1
     case RU
     case PBE1
+    case PH2 // Philippines
+    case SG2 // Singapore
+    case TH2 // Thailand
+    case TW2 // Taiwan
+    case VN2 // Vietnam
 }

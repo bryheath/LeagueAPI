@@ -127,8 +127,8 @@ public class LoLAPI: APIClient {
         MatchBusiness.getMatch(method: .MatchesByAccountId(id: puuid, startTime: startTime, endTime: endTime, queue: queue, type: type, start: start, count: count), region: region, key: self.key, handler: handler)
     }
     
-    public func getMatchTimeline(by gameId: GameId, on region: Region, handler: @escaping (MatchTimeline?, String?) -> Void) {
-        MatchBusiness.getMatch(method: .TimelineById(id: gameId), region: region, key: self.key, handler: handler)
+    public func getMatchTimeline(by matchId: LOLMatchId, on region: Region, handler: @escaping (MatchTimeline?, String?) -> Void) {
+        MatchBusiness.getMatch(method: .TimelineById(id: matchId), region: region, key: self.key, handler: handler)
     }
     
     public func getMatchIds(by tournamentCode: TournamentCode, on region: Region, handler: @escaping ([GameId]?, String?) -> Void) {
@@ -138,8 +138,8 @@ public class LoLAPI: APIClient {
         MatchBusiness.getMatch(method: .MatchIdsByTournamentCode(code: tournamentCode), region: region, key: self.key, handler: handlerIds)
     }
     
-    public func getMatch(by gameId: GameId, and tournamentCode: TournamentCode, on region: Region, handler: @escaping (Match?, String?) -> Void) {
-        MatchBusiness.getMatch(method: .ByIdAndTournamentCode(id: gameId, code: tournamentCode), region: region, key: self.key, handler: handler)
+    public func getMatch(by matchId: LOLMatchId, and tournamentCode: TournamentCode, on region: Region, handler: @escaping (Match?, String?) -> Void) {
+        MatchBusiness.getMatch(method: .ByIdAndTournamentCode(id: matchId, code: tournamentCode), region: region, key: self.key, handler: handler)
     }
     
     // MARK: - Spectator

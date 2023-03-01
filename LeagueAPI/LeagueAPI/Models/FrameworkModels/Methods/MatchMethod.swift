@@ -13,9 +13,9 @@ internal class MatchMethod: LeagueMethod {
     public enum MatchMethods: CustomStringConvertible {
         case ById(id: LOLMatchId)
         case MatchesByAccountId(id: SummonerPuuid, startTime: Datetime?, endTime: Datetime?, queue: QueueMode?, type: GameType?, start: Int?, count: Int?)
-        case TimelineById(id: GameId)
+        case TimelineById(id: LOLMatchId)
         case MatchIdsByTournamentCode(code: TournamentCode)
-        case ByIdAndTournamentCode(id: GameId, code: TournamentCode)
+        case ByIdAndTournamentCode(id: LOLMatchId, code: TournamentCode)
         
         public var description: String {
             var methodDescription: String {
@@ -72,7 +72,8 @@ internal class MatchMethod: LeagueMethod {
             return "\(commonPath)/matches/by-puuid/\(id)\("/ids\(queryParametersUrl)")"
             
         case .TimelineById(let id):
-            return "\(commonPath)/timelines/by-match/\(id)"
+            print("\(commonPath)/matches/\(id)/timeline")
+            return "\(commonPath)/matches/\(id)/timeline"
         case .MatchIdsByTournamentCode(let code):
             return "\(commonPath)/matches/by-tournament-code/\(code)/ids"
         case .ByIdAndTournamentCode(let id, let code):
